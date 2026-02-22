@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clínica Dental | Sonrisas que Brillan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec80",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102219",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-split {
+            min-height: 85vh;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="bg-primary text-background-dark p-2 rounded-lg">
+<span class="material-symbols-outlined flex items-center justify-center text-2xl">dentistry</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">DENTAL<span class="text-primary">CARE</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Inicio</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#servicios">Servicios</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#contacto">Contacto</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-background-dark px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+                    AGENDAR CITA
+                </button>
+</div>
+</div>
+</header>
+<main>
+<!-- Split Hero Section -->
+<section class="relative overflow-hidden bg-white dark:bg-background-dark">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row hero-split">
+<!-- Text Content -->
+<div class="w-full md:w-1/2 flex flex-col justify-center px-6 py-12 md:py-20 lg:pr-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6 w-fit">
+<span class="material-symbols-outlined text-sm">verified</span>
+                        Clínica Especializada
+                    </div>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-slate-100 leading-[1.1] mb-6">
+                        Sonrisas que <span class="text-primary">Brillan</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-lg">
+                        Cuidado dental personalizado con tecnología de vanguardia. Nos enfocamos en tu bienestar para que vuelvas a sonreír con total confianza.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-background-dark px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all group">
+                            Reservar mi Consulta
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<button class="border-2 border-slate-200 dark:border-slate-800 px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                            Ver Tratamientos
+                        </button>
+</div>
+<div class="mt-12 flex items-center gap-6 border-t border-slate-100 dark:border-slate-800 pt-8">
+<div class="flex -space-x-3">
+<img class="w-12 h-12 rounded-full border-2 border-white dark:border-background-dark object-cover" data-alt="Satisfied female patient portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeNcURMAqMlQQZOjNwmqfjLTz9ZBHr_wBPhlpvXrefOlu69071UJQ_hGWWod90OyXn9DN2vVleZeopUwQoyMLgreTI4cKof_gVdzhwSDrS5XB6sSR16MhimV8EqNaxUAa-sfaZbNeb-vo0t9c21XhNhrthj6hzM9u4W8lyYDorJRSJdQrjds-4nxHNerGb2yqO0k_IocyhQgUDwXqsAx5K8ieYnTSGpDcAGh2ow4Pgme52hY1UyN4_rdUjcDBtFZvZHxVXqBqe3RPE"/>
+<img class="w-12 h-12 rounded-full border-2 border-white dark:border-background-dark object-cover" data-alt="Satisfied male patient portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwnt_gflb7YAuNoHuR-_996v-w2TPeNRMVYvUOSvZEw2drTkl4i1vEcitlu31ZgGuW1HVZImEPHp1Xwv1oxtzQ6ikO_L-rPiU-_c4U7mN1bDVame1sMDYBfJmp2hCjricyX9B5OW_Jt6WPHMWtyfmKXJ_YIoVdnPHvIKLJLEdMXOd0Z96cpZUeCj5nhTUtZ_sl8VjYHunSWcQqWFBUgFBu5NxOMEc4aoYv9wAY0qPpE0eh64ZwzHE5Rva8fz3KXinehjUU5lsDGHcD"/>
+<img class="w-12 h-12 rounded-full border-2 border-white dark:border-background-dark object-cover" data-alt="Smiling happy female patient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9zJC63QO1rBRmqaGGbGoWNZbrO1kKYtawXEBeYQ1oDBGFOfsmyeTI6EGYKP-o10FOQM57De1mqhbif3fIg6pJ_0ZjD3QKRLWJxVYGdBistoXttmJdVHZfbYwZW036b9Z1fbkuQYrlmxvFJO9NSMeke7w-Ty3o6aB7PkkBF1PzCwoZfdTSxJ2qwCz_WoDw-zOZ0VWY-qWkTwFGuhdixejPw1UTnHYyWN8Q6MLmyymomCJpBeBaGwgLxzsXaMtVf9TMcaceJGl392gb"/>
+</div>
+<div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-sm font-semibold text-slate-500 tracking-tight">Más de 2,500 pacientes felices</p>
+</div>
+</div>
+</div>
+<!-- Hero Image -->
+<div class="w-full md:w-1/2 relative min-h-[400px]">
+<div class="absolute inset-0 bg-primary/5 dark:bg-primary/20"></div>
+<img class="w-full h-full object-cover grayscale-[20%] contrast-125" data-alt="High quality close up of a beautiful healthy dental smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDbt9_iGgWk2EydbWkfV2pJtSI1m9PXLhZAorCQnDcP5YNQrQ8x6lDpt5diRaeovemVj5dr9uAdZ7lte2GHGp_TCxpCEC6iIw-VXpuD6tfeUKeduYGZKwzaBTk8qNgFIYG5Wz2JZwQpf2UZPvlrrFJLavrHK4XPs4m6bs69nLysQ22OSAVaJxJSgxeepzIy3nbGBREgC3DAMNuj-3ODBAk8pl_hrAITGMFQfjfV_DRqgwUehW_4VeZY2Bj8oXNjxOn1HzPTFTgfTpG"/>
+<div class="absolute bottom-8 left-8 right-8 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl hidden lg:block">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Certificación Internacional</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 italic">Equipamiento de última generación alemana.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 bg-background-light dark:bg-background-dark/50" id="servicios">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-primary text-sm font-black uppercase tracking-[0.3em] mb-4">Nuestras Especialidades</h2>
+<h3 class="text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">Tratamientos diseñados para cada necesidad</h3>
+<p class="text-slate-500 dark:text-slate-400">Ofrecemos un abanico completo de soluciones odontológicas bajo un mismo techo, asegurando coherencia y calidad en cada paso.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="service-card group bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+<div class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-all">
+<span class="material-symbols-outlined text-3xl">cleaning_services</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Odontología General</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Limpiezas profundas, chequeos preventivos y restauraciones para mantener una base sólida de salud oral.
+                        </p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                            Saber más <span class="material-symbols-outlined text-base">chevron_right</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="service-card group bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+<div class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-all">
+<span class="material-symbols-outlined text-3xl">align_horizontal_center</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Ortodoncia</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Alineación perfecta con brackets estéticos o invisalign. Tecnología digital para planificar tu nueva sonrisa.
+                        </p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                            Saber más <span class="material-symbols-outlined text-base">chevron_right</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="service-card group bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+<div class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-all">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Implantes Dentales</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Recupera la funcionalidad y estética total con implantes de alta durabilidad y apariencia 100% natural.
+                        </p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                            Saber más <span class="material-symbols-outlined text-base">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 bg-white dark:bg-background-dark overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<img class="rounded-3xl shadow-2xl relative z-10" data-alt="Modern dental clinic equipment and professional room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIG_IAS2-8rghbiOPkmfX11N-1t2GhZyA1R5GT3zcQuUBjNVlBKWGMqou3gD16hMahEP3tMarUegdVvKPPIDWxUznzvqnSnvIF7ZyS5ejDnfly8MYzo_y4q8ZXbclrSRzHeKji7OXyOOwZ4W4QhSY-B2EV90rDQh-j-XVLs_-Qov_aKdoT1zztlGRf3lZOCLgMRjIZqLZb1wIVDlhkkC5t_hwRfktpsE9WuPP5Q8yufA7fhMALUfrfvZQDw890NysGEUuLDBn3ng8Q"/>
+<div class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-2xl z-20 hidden sm:block">
+<p class="text-4xl font-black text-background-dark">15+</p>
+<p class="text-xs font-bold text-background-dark/80 tracking-widest uppercase">Años de experiencia</p>
+</div>
+</div>
+<div>
+<h2 class="text-4xl font-extrabold mb-8">Excelencia Médica &amp; Confort del Paciente</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="bg-background-light dark:bg-slate-900 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-2">Ambiente Relajado</h5>
+<p class="text-slate-500 dark:text-slate-400">Diseñamos nuestras instalaciones para minimizar la ansiedad dental, con espacios luminosos y música suave.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-background-light dark:bg-slate-900 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-2">Diagnóstico Digital</h5>
+<p class="text-slate-500 dark:text-slate-400">Radiografías digitales de mínima radiación y escaneo 3D para una precisión milimétrica.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-background-light dark:bg-slate-900 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">group</span>
+</div>
+<div>
+<h5 class="text-lg font-bold mb-2">Especialistas Certificados</h5>
+<p class="text-slate-500 dark:text-slate-400">Nuestro equipo está en constante formación en las mejores universidades del mundo.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-primary/5 dark:bg-primary/10">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="text-primary text-sm font-black uppercase tracking-[0.3em] mb-4">Testimonios</h2>
+<h3 class="text-4xl font-extrabold text-slate-900 dark:text-slate-100">Lo que dicen nuestros pacientes</h3>
+</div>
+<div class="flex gap-2">
+<button class="size-12 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-12 rounded-full bg-slate-900 dark:bg-primary text-white dark:text-background-dark flex items-center justify-center hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 italic mb-8">"Increíble experiencia. Tenía miedo de los dentistas hasta que conocí esta clínica. El trato es tan amable y profesional que ya no tengo excusas para no cuidar mi boca."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 bg-slate-200 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Patient avatar testimonial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx8zlpcINbR5C56BV97S65hldia4xVBeP8nYUhZGdcwlbWKUVMweZ-uQwOLmsLMDN29wlg0J-pzCKwfMgO1SE7KisEZ8dD9hODeWVyDjE2cxykrZKnV62opSRbvDhYUd4F5mIlVvzRKN5ZKc8HGEgKQm3mFlfuOsqi2_ZcrYbsPFvNrdyJ9t9d3jSdrDoa6xpQAf6LePBKAjG9bNgAI8liZANpdfU19H8lY3OzvUYyqCIQc1NtURP4ofX1Elv3cTZymW6jK6I-7Vke"/>
+</div>
+<div>
+<h6 class="font-bold">Ana Martínez</h6>
+<p class="text-xs text-slate-500 uppercase tracking-widest">Paciente de Ortodoncia</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 italic mb-8">"Me hice un tratamiento de implantes y el resultado es impecable. El Dr. fue muy claro en todo momento sobre el proceso. Los recomiendo totalmente."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 bg-slate-200 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Male patient avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsDZ0saWKJ2ksw5rYJRxVahnurffuXYKN3CCAMOe6-rN7Tcum9RzppNY3ZUJgr4CNcRQ9S-o4D5tgnI4qDFuk75dRe8CCxaMOM2NRiKzfiei6D852eMj2ch-Od2zGU77_OSroDGZ29LNJm5j8G1GVmIZE-sPiQSfNSMBOzQiWKn_GDPPgOJvhrx15RWcgo8Cqsudn7LYJjoBQ3ZCu9YwZYfwlHdPgMuvqxTkET0X4ZZ95oyozOBEackhU0ZaF75c049B5ceakAXu3H"/>
+</div>
+<div>
+<h6 class="font-bold">Carlos Ruiz</h6>
+<p class="text-xs text-slate-500 uppercase tracking-widest">Paciente de Implantes</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 italic mb-8">"La tecnología que usan es de otro nivel. Pude ver mi futura sonrisa en 3D antes de empezar. El personal de recepción es un amor."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 bg-slate-200 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Female patient avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlOouUAKoT6_cb7wqO6AYZFcHRHK1VWYMFPhbNWmuYb_2gWjA8ahpLg52ZfyVvkYGVMu2dN5gcQiCoSxC4sHhHNFD5t4t4IbFLDYrbhxrbumnbKOpSToMou-w7FaPziMjTkHUBl5xm0OqQnGoYaE0BMitIszO9c-MkLwAhi2GlA4BCCmVHyGrPFMesBbnW54wVLZ-rWkNmHR-9WvtUYZ4ckiwsvrOUjtH7C6ck2sIgaeee7Cjd21ozChvH7uoSjQUjJ9xkUfuET2EH"/>
+</div>
+<div>
+<h6 class="font-bold">Elena Gómez</h6>
+<p class="text-xs text-slate-500 uppercase tracking-widest">Paciente de Estética</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA / Map Section -->
+<section class="py-24 bg-white dark:bg-background-dark" id="contacto">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 bg-slate-900 rounded-[3rem] overflow-hidden text-white p-2">
+<div class="p-12 lg:p-16 flex flex-col justify-center">
+<h2 class="text-4xl font-bold mb-6">¿Listo para transformar tu sonrisa?</h2>
+<p class="text-slate-400 mb-10 text-lg">Estamos en el corazón de la ciudad. Visítanos o agenda tu cita online hoy mismo. Tu primera evaluación es de cortesía.</p>
+<div class="space-y-6 mb-10">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<span class="text-lg">+1 (234) 567-890</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<span class="text-lg">hola@clinicadental.com</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="text-lg">Calle Salud 123, Madrid, España</span>
+</div>
+</div>
+<button class="bg-primary text-background-dark px-10 py-5 rounded-2xl text-lg font-black hover:scale-105 transition-all shadow-xl shadow-primary/20 w-fit">
+                        AGENDAR AHORA
+                    </button>
+</div>
+<div class="relative min-h-[400px]">
+<div class="absolute inset-0 bg-slate-800">
+<img class="w-full h-full object-cover opacity-60" data-alt="Stylized map showing city location" data-location="Madrid, Spain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8SqURyD6__2-jwgk0tI-U43eH4jkOcSQ-ETqUR1IwXIQU7cdao-NWvYh-JSCijD9jax50beKCCEr25amsPogEIX6ulku8-o174D0K_Ikl01mFG9e5ponJF3yvsT5YU-BsgJdYyE-kW5ZZti_RNneOilShtC0EP1P18HOE72rOoD9isePfxpI2c-Aqv2AH_Oy9NF3teDRNKoY13JuZ8KYKFPCwFQICvQW5wtHuOiRcsdGYOUiverM-UwtxKHCtUlQR0Pa8yZMuw1ei"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-background-dark p-4 rounded-full animate-bounce shadow-2xl">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark pt-20 pb-10 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<div class="bg-primary text-background-dark p-1.5 rounded-lg">
+<span class="material-symbols-outlined flex items-center justify-center text-xl">dentistry</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100 uppercase">DentalCare</h1>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Comprometidos con la excelencia y el bienestar de nuestros pacientes desde 2008.
+                    </p>
+</div>
+<div>
+<h6 class="font-bold mb-6 text-sm uppercase tracking-widest">Menú</h6>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Inicio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Servicios</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Testimonios</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog Dental</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold mb-6 text-sm uppercase tracking-widest">Legal</h6>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Aviso Legal</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold mb-6 text-sm uppercase tracking-widest">Redes Sociales</h6>
+<div class="flex gap-4">
+<a class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">videocam</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 DentalCare Clínica Odontológica. Todos los derechos reservados.</p>
+<div class="flex gap-6 text-xs text-slate-400">
+<span>Diseñado con pasión por la salud.</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

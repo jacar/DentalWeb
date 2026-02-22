@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxury Dental Clinic Dark V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f0fbd", // Deep Midnight Blue
+                        "accent-gold": "#C5A059", // Elegant Gold
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#050510", // Even darker for contrast
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Newsreader', serif;
+        }
+        .gold-border {
+            border-color: rgba(197, 160, 89, 0.3);
+        }
+        .text-shadow-lg {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-accent-gold/30">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b gold-border">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-gold text-3xl">verified_user</span>
+<h1 class="text-xl font-bold tracking-tight uppercase">Luxury <span class="text-accent-gold">Dental</span></h1>
+</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-sm uppercase tracking-widest hover:text-accent-gold transition-colors" href="#">Services</a>
+<a class="text-sm uppercase tracking-widest hover:text-accent-gold transition-colors" href="#">Technology</a>
+<a class="text-sm uppercase tracking-widest hover:text-accent-gold transition-colors" href="#">Philosophy</a>
+<a class="text-sm uppercase tracking-widest hover:text-accent-gold transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-accent-gold hover:bg-[#b38e4a] text-background-dark px-8 py-2.5 rounded text-sm font-bold uppercase tracking-widest transition-all">
+                Book Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-background-dark/40 to-background-dark z-10"></div>
+<div class="w-full h-full bg-cover bg-center scale-105" data-alt="Blurred cinematic shot of a luxury dental surgery room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkQMIhQXAJv_EAGoWILx7Hli-opRlm7cYkgnzz6ZsQrVu66J7mx3HG21xQZkIaEUEnz-uLv5xhAw_7MZTouxndUg2Mr2sBzoUvWUan18-hAlKR0doYYyvE74mCdqEZEQqiMesyc6dCwhW-HOvLP2I3wEXM9V1f0ArxFoDrElPmavdpuYfx0YEmMP2Q8WKzwmj_-iSSJDU8TFHr7ZaEIqu0ihSsMnVq54bg5Irk8uEUltG-RK8g-Zer1wB4OLybUWyBmwWqeuEM3LUk');">
+</div>
+</div>
+<div class="relative z-20 text-center px-4 max-w-4xl">
+<span class="text-accent-gold uppercase tracking-[0.4em] text-sm mb-6 block font-medium">The Art of Oral Health</span>
+<h1 class="text-white text-6xl md:text-8xl font-display font-light leading-tight mb-8 text-shadow-lg italic">
+                Exclusividad en cada detalle
+            </h1>
+<p class="text-slate-300 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                Experience precision meets comfort in our boutique dental studio. A sanctuary designed for your ultimate well-being.
+            </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-accent-gold text-background-dark px-10 py-4 rounded-lg font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+                    Private Consultation
+                </button>
+<button class="border border-accent-gold text-accent-gold px-10 py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-accent-gold/10 transition-colors">
+                    View Gallery
+                </button>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 px-6 bg-background-dark">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-accent-gold uppercase tracking-widest text-sm mb-4">Our Specialty</h2>
+<h3 class="text-4xl md:text-5xl font-display italic text-white leading-tight">Elite dental solutions tailored for you.</h3>
+</div>
+<div class="h-px bg-accent-gold/30 flex-grow mx-8 hidden lg:block"></div>
+<p class="text-slate-400 max-w-xs text-sm uppercase tracking-widest">Crafting perfect smiles with digital precision.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Service 1 -->
+<div class="group relative overflow-hidden rounded-xl border gold-border bg-primary/5 p-4 transition-all hover:bg-primary/10">
+<div class="aspect-[16/10] overflow-hidden rounded-lg mb-8">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a perfect bright smile with aesthetic veneers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWUfFw6-9N-7PpMJXl_g-3xDLox1NOmDT6dA4RFlBCo2kS-9fIIRLskwFfbTxfmCXKyv1btUOgCjxJqkXdICHEbsI5J8zJg2ulYzTKbfAw8mx6OLaM5scFxqJl7OBmc8s_DrDCv3qhAqWYUAUjpk011ECbjpwfv6KoSmSHoWbNd04ePsoaWiOE2qk3YTTA36DXer_k6zzdmkNbkzvj52Encrgeszh1vap3NKhbSVKb0VebW8QjW48VYowffirg9ZHOqJVWGgqyLD_m');">
+</div>
+</div>
+<div class="px-4 pb-4">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-2xl font-display italic text-white">Aesthetic Dentistry</h4>
+<span class="material-symbols-outlined text-accent-gold">auto_fix_high</span>
+</div>
+<p class="text-slate-400 mb-8 leading-relaxed">
+                            Bespoke veneers and professional whitening designed to enhance your natural beauty. Every smile is a unique masterpiece.
+                        </p>
+<button class="flex items-center gap-2 text-accent-gold uppercase tracking-widest text-xs font-bold group-hover:gap-4 transition-all">
+                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group relative overflow-hidden rounded-xl border gold-border bg-primary/5 p-4 transition-all hover:bg-primary/10">
+<div class="aspect-[16/10] overflow-hidden rounded-lg mb-8">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Digital dental surgery equipment in a modern clinic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTgt6b0MsUE1hxpvj4jMiozNKq-Jpf0RfFwp7LNypn7g5esi1A_B3TPT--ivIWLhUWOAZyzsT0HFzvpRUNopuB-dy63r-lHkO2Q4Em9liuxhbHfgsM6zNy-qIfHh7z4kEMvM33RtrCJevLJpD-4cHDjTTKSMQSrEDo36s8Wj7gWND-VPig3TXOkaapqMT0sVA4r3QH8c0YIiikZBOJPEqPb-JnUld8JsrX3OGKEPLB0nJuxVjzbElzUItAFUzzSnwzCJwrPIBPO5j_');">
+</div>
+</div>
+<div class="px-4 pb-4">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-2xl font-display italic text-white">Dental Implants</h4>
+<span class="material-symbols-outlined text-accent-gold">biotech</span>
+</div>
+<p class="text-slate-400 mb-8 leading-relaxed">
+                            State-of-the-art digital surgery and permanent restorations using biocompatible materials for lifelong stability.
+                        </p>
+<button class="flex items-center gap-2 text-accent-gold uppercase tracking-widest text-xs font-bold group-hover:gap-4 transition-all">
+                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="py-24 bg-primary/10 border-y gold-border relative">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1">
+<div class="grid grid-cols-2 gap-6">
+<div class="p-8 rounded-xl bg-background-dark/50 border gold-border">
+<span class="material-symbols-outlined text-accent-gold text-4xl mb-4">workspace_premium</span>
+<h5 class="text-white font-bold mb-2">Boutique Experience</h5>
+<p class="text-slate-400 text-sm">Tailored attention in an exclusive setting.</p>
+</div>
+<div class="p-8 rounded-xl bg-background-dark/50 border gold-border">
+<span class="material-symbols-outlined text-accent-gold text-4xl mb-4">precision_manufacturing</span>
+<h5 class="text-white font-bold mb-2">Digital Precision</h5>
+<p class="text-slate-400 text-sm">State-of-the-art diagnostic technology.</p>
+</div>
+<div class="p-8 rounded-xl bg-background-dark/50 border gold-border">
+<span class="material-symbols-outlined text-accent-gold text-4xl mb-4">health_and_safety</span>
+<h5 class="text-white font-bold mb-2">Pain-Free Care</h5>
+<p class="text-slate-400 text-sm">Advanced techniques for complete comfort.</p>
+</div>
+<div class="p-8 rounded-xl bg-background-dark/50 border gold-border">
+<span class="material-symbols-outlined text-accent-gold text-4xl mb-4">psychology</span>
+<h5 class="text-white font-bold mb-2">Holistic View</h5>
+<p class="text-slate-400 text-sm">We care for the person, not just the tooth.</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="text-accent-gold uppercase tracking-widest text-sm mb-6">Our Philosophy</h2>
+<h3 class="text-5xl font-display italic text-white leading-tight mb-8">
+                    Where precision meets comfort in a serene environment.
+                </h3>
+<p class="text-slate-300 text-lg leading-relaxed mb-8 italic">
+                    "We believe that a dental visit should be more than a procedure; it should be an experience of relaxation and trust. Our clinic combines the finest medical expertise with the luxury of a boutique hotel."
+                </p>
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full border gold-border overflow-hidden">
+<img alt="Dr. Julian V" class="w-full h-full object-cover" data-alt="Portrait of a professional male dentist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmNnvhdp6fKAa-XWK5VEjrjCe5JiMsIC3NRZ6rohCGfNyL9Vm1GO3aXq2jm6B5Kfj_3-TTqgtHk5-u2-yZhpLG4mMdgI-hqjBNK3PQueHmKzYG4zZLAC8W6c5xVy8AMSRmFLdHt4R8KO8vIOGgJ3Z4t7TM6lvuqxiHjcycmYZ24Qne6gBY4cP2NN_S_X3lZZaP8-j-pWwEiGEUUnqq4knNEXciHW6XOODI02xVzqm9QCTX7GXj9h2QRLY7hHAwOU9Gsma5vkdaZBBB"/>
+</div>
+<div>
+<p class="text-white font-bold">Dr. Julian Vance</p>
+<p class="text-accent-gold text-sm tracking-widest uppercase">Lead Surgeon &amp; Founder</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / Contact -->
+<footer class="bg-background-dark py-20 px-6 border-t gold-border">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+<div class="max-w-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-accent-gold text-3xl">verified_user</span>
+<h2 class="text-xl font-bold tracking-tight uppercase">Luxury <span class="text-accent-gold">Dental</span></h2>
+</div>
+<p class="text-slate-500 mb-8">Redefining excellence in aesthetic and restorative dentistry through personalized care and cutting-edge technology.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border gold-border flex items-center justify-center text-accent-gold hover:bg-accent-gold hover:text-background-dark transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border gold-border flex items-center justify-center text-accent-gold hover:bg-accent-gold hover:text-background-dark transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Clinic</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-accent-gold transition-colors" href="#">Services</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Our Team</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Pricing</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Contact</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li>1200 Luxury Drive,</li>
+<li>Beverly Hills, CA</li>
+<li>+1 (555) 000-9999</li>
+<li>hello@luxurydental.com</li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Consultation</h4>
+<p class="text-slate-400 text-sm mb-6">Join our private waiting list for a priority consultation.</p>
+<div class="relative">
+<input class="w-full bg-primary/5 border gold-border rounded py-3 px-4 text-sm text-slate-100 focus:outline-none focus:ring-1 focus:ring-accent-gold" placeholder="Email Address" type="email"/>
+<button class="absolute right-2 top-2 text-accent-gold material-symbols-outlined">send</button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t gold-border flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 uppercase tracking-[0.2em]">
+<p>© 2024 Luxury Dental Clinic. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-accent-gold" href="#">Privacy Policy</a>
+<a class="hover:text-accent-gold" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

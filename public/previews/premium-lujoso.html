@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxury Dental Clinic Dark V1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b8850f",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#0a0e17", // Midnight Blue variant
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(10, 14, 23, 1) 30%, rgba(10, 14, 23, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30">
+<!-- Sticky Navigation -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-extrabold tracking-widest uppercase">Luxe Dental</span>
+</div>
+<div class="hidden md:flex items-center gap-12 text-xs font-semibold uppercase tracking-widest text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Treatments</a>
+<a class="hover:text-primary transition-colors" href="#">Our Clinic</a>
+<a class="hover:text-primary transition-colors" href="#">Case Studies</a>
+<a class="hover:text-primary transition-colors" href="#">Experience</a>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white text-xs font-bold uppercase tracking-widest px-8 py-3 rounded transition-all active:scale-95">
+                Book Appointment
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[90vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<img alt="Confident professional smile" class="w-full h-full object-cover object-center" data-alt="Confident professional person with a perfect smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_cNJ_qBd4S2MtvzzcMXdzLjcWYCVcfiLemiZGbXo0-fB605WpVcusHzDvag7oI1LWhnCGChlML8X-JPmcRyrhgaQXXOatJ4CcYwHWPt7-xw0IutQVPvcmAh7LTz2-wYnaLlDcnBI4bMkmyidYqjAIB-W5wqTJgV59Hay2qGXoj8AkC8Wrktc500lRyxIrLDWC2SRSOUWPcx1E28Cf1FlB0COSiIO1-cv40F2Hm-USXkajlUaaY37vSYLozGBLjZSxJs1m0bA70Voj"/>
+</div>
+<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-[0.3em] uppercase text-sm mb-6 block">Premium Boutique Clinic</span>
+<h1 class="text-6xl md:text-8xl font-light leading-tight mb-8">
+                        Exclusividad en <br/>
+<span class="italic font-serif">cada detalle</span>
+</h1>
+<p class="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed">
+                        Experience bespoke smile design in a private, high-end environment. Precision meets artistry in our midnight blue boutique clinic.
+                    </p>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-white text-sm font-bold uppercase tracking-widest px-10 py-5 rounded-sm hover:shadow-[0_0_20px_rgba(184,133,15,0.3)] transition-all">
+                            Schedule Consultation
+                        </button>
+<a class="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:text-primary transition-all" href="#">
+                            View Case Studies
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-32 bg-background-dark">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl font-light mb-6">Aesthetic Dentistry <br/> &amp; High-end Implants</h2>
+<p class="text-slate-400 leading-relaxed">We redefine dental standards with advanced technology and gold-standard materials, ensuring every procedure is as seamless as it is transformative.</p>
+</div>
+<div class="text-slate-500 text-sm font-medium tracking-widest uppercase mb-2">
+                        Scroll for more [01/04]
+                    </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
+<!-- Service 1 -->
+<div class="bg-background-dark p-12 hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8">auto_awesome</span>
+<h3 class="text-xl font-bold mb-4 uppercase tracking-tighter">Smile Design</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-8">Custom porcelain veneers tailored to your facial symmetry using 3D digital smile simulation.</p>
+<a class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Learn more <span class="material-symbols-outlined text-sm">trending_flat</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="bg-background-dark p-12 hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8">diamond</span>
+<h3 class="text-xl font-bold mb-4 uppercase tracking-tighter">High-end Implants</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-8">Medical-grade titanium and zirconia solutions for lasting perfection and biological harmony.</p>
+<a class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Learn more <span class="material-symbols-outlined text-sm">trending_flat</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="bg-background-dark p-12 hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8">shield_with_heart</span>
+<h3 class="text-xl font-bold mb-4 uppercase tracking-tighter">VIP Sedation</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-8">Stress-free procedures in our luxury treatment suites, administered by board-certified specialists.</p>
+<a class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Learn more <span class="material-symbols-outlined text-sm">trending_flat</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- The Experience Gallery -->
+<section class="py-32 bg-[#0d121c]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-[4/5] bg-slate-800 overflow-hidden">
+<img alt="Luxury lounge" class="w-full h-full object-cover" data-alt="Ultra-modern luxury dental lounge area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBpibc2vMCJ5yzzH5kCvq_Fia7_H_XcNcyh_OZtoD5BMxb7JpqVEQkZtozCfBb5flxSPIOiKn6jAE45UUpxFGgd-6-MmeCA1xQaUqB9tPBE0aUQc_MFNENpLmctkBP3GdMReq6oN01StJ-uC0KG-I9Lv3ZWCa-h5hJCwQYdvNZ94kibXgHOERwNHmY3y_nfmUrTqa0VTXHTwqR88JefjljKUxPLeFZsd0NGgzSMejT7lGftL55kjMGquseSJi0z8c0Q3U8_GtADcd4"/>
+</div>
+<div class="aspect-[4/5] bg-slate-800 overflow-hidden mt-12">
+<img alt="Digital lab" class="w-full h-full object-cover" data-alt="High-tech digital dental laboratory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANEYiI0Pg_IGO9D9ZS5HVWMOtC2iBKWwskrX8WV0KTiUne1dH2zfR0Uj3fO8d_fDAYj-84EH1GxaQIUngwL_qWGCsEyvm6iXU1HLnOZUxDY-qOzagsFniwcx91eOa91gTJw-FeUvwmbFHi1_QaWME7BRuTVZuAqk51PWa6EFHNcad2F4-L8DKAQwnl0oijzzPKkl82MtrWERRea_S5CeG_Gm49GnaOr8POmzJjj5R6U1e89BOuQ8Ce7_FbwXnbKZcoG19oTsl4PC5u"/>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Beyond Dentistry</span>
+<h2 class="text-5xl font-light mb-8 leading-tight">The Clinic <br/> <span class="italic font-serif">Experience</span></h2>
+<p class="text-slate-400 leading-relaxed mb-10 text-lg">
+                            We believe that a beautiful smile starts with a comfortable environment. Our clinic is designed to feel more like a private lounge than a medical facility, providing a sanctuary of calm in the heart of the city.
+                        </p>
+<ul class="space-y-4 mb-12">
+<li class="flex items-center gap-4 text-slate-300">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                                Private Consultation Suites
+                            </li>
+<li class="flex items-center gap-4 text-slate-300">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                                Nespresso Bar &amp; Concierge
+                            </li>
+<li class="flex items-center gap-4 text-slate-300">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                                3D Digital Imaging Technology
+                            </li>
+</ul>
+<button class="border border-white/20 hover:border-primary text-white text-xs font-bold uppercase tracking-[0.2em] px-10 py-5 transition-all">
+                            Tour Our Clinic
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 z-0"></div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<h2 class="text-4xl md:text-6xl font-light mb-10 leading-tight">Your path to a <span class="italic font-serif">masterpiece smile</span> begins here.</h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="w-full md:w-auto bg-primary text-white text-sm font-bold uppercase tracking-widest px-12 py-5 rounded-sm hover:scale-105 transition-all">
+                        Book Your Consult
+                    </button>
+<button class="w-full md:w-auto border border-white/20 text-white text-sm font-bold uppercase tracking-widest px-12 py-5 rounded-sm hover:bg-white/5 transition-all">
+                        Inquire Privately
+                    </button>
+</div>
+<div class="mt-16 flex items-center justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="h-8 w-auto bg-white/10 px-4 rounded flex items-center text-[10px] font-bold tracking-widest uppercase">ADA Member</div>
+<div class="h-8 w-auto bg-white/10 px-4 rounded flex items-center text-[10px] font-bold tracking-widest uppercase">ISO Certified</div>
+<div class="h-8 w-auto bg-white/10 px-4 rounded flex items-center text-[10px] font-bold tracking-widest uppercase">Elite Dentist</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-dark border-t border-white/5 pt-24 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-8">
+<div class="text-primary">
+<svg class="w-6 h-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-lg font-extrabold tracking-widest uppercase">Luxe Dental</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Redefining the standard of dental excellence through artistry and technology.
+                        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-primary text-slate-400 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-primary text-slate-400 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-8">Treatments</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Digital Smile Design</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Porcelain Veneers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Full Arch Rehabilitation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Advanced Implants</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-8">Clinic</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Our Approach</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Patient Journey</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Technology</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Membership</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-8">Connect</h4>
+<p class="text-sm text-slate-500 mb-4">1200 Luxury Drive, Suite 100<br/>Medical District, Beverly Hills</p>
+<p class="text-sm text-primary font-bold mb-4">+1 (555) 000-LUXE</p>
+<div class="w-full h-32 bg-slate-800 rounded mt-4 grayscale opacity-60 hover:opacity-100 transition-all overflow-hidden">
+<img alt="Location map" class="w-full h-full object-cover" data-alt="Abstract street map of Beverly Hills" data-location="Beverly Hills" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABqubaGr7_A4nfMl5Hyf7p7E17SWVyEelFopGesAO5ykDezZHTZQIp7haM9c9-DXw33McpxML4jhzW8m8WSFBpQm46F43H6BLkLWSgEI9nFPOvHw9VYMHWx1v1dgGJ1-FJhEI_Cwy9alLtEJ6E32t3z7dxqF93cCSUXU3rPBdZer_PhdrqDRt5rlsS1ZoaldIfup1yNd4ykJrPiaYW62A9r3DaxI68-LY5CFA2NDD0LT3EANkUHCef39MvkqOVFR6YbiejP-bnsYQK"/>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-slate-600">
+<p>© 2024 Luxe Dental Clinic. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-slate-400" href="#">Privacy Policy</a>
+<a class="hover:text-slate-400" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</body></html>
