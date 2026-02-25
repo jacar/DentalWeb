@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { XCircle, CheckCircle, ArrowRight, TrendingUp, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useState, useRef, MouseEvent } from 'react'
+import { Magnetic } from './magnetic'
 
 interface ProblemItem {
   problem: string
@@ -54,7 +55,7 @@ function ProblemCard({ item, index }: { item: ProblemItem, index: number }) {
       className="relative group box-border h-full"
     >
       {/* Decorative Glow */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/20 to-emerald-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500/10 to-teal-500/10 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
 
       <div
         style={{ transform: "translateZ(50px)" }}
@@ -67,25 +68,25 @@ function ProblemCard({ item, index }: { item: ProblemItem, index: number }) {
         <div className="flex justify-between items-start mb-8 relative z-10">
           <motion.div
             whileHover={{ rotate: -15, scale: 1.1 }}
-            className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center border border-red-200/50 shadow-inner"
+            className="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center border border-slate-200/50 shadow-inner"
           >
-            <XCircle className="w-7 h-7 text-red-500" />
+            <XCircle className="w-7 h-7 text-slate-400" />
           </motion.div>
           <div className="text-right">
             <motion.span
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.1 }}
-              className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-red-600 to-orange-500 block mb-1"
+              className="text-4xl font-black text-slate-300 block mb-1"
             >
               {item.stat}
             </motion.span>
-            <div className="h-1 w-12 bg-red-100 rounded-full ml-auto group-hover:w-full transition-all duration-500" />
+            <div className="h-1 w-12 bg-slate-100 rounded-full ml-auto group-hover:w-full transition-all duration-500" />
           </div>
         </div>
 
         <div className="mb-8 relative z-10">
-          <p className="text-xs tracking-widest uppercase text-red-500 font-bold mb-3 flex items-center gap-2">
-            <span className="w-1 h-1 bg-red-500 rounded-full" />
+          <p className="text-xs tracking-widest uppercase text-slate-400 font-bold mb-3 flex items-center gap-2">
+            <span className="w-1 h-1 bg-slate-400 rounded-full" />
             El Problema
           </p>
           <h3 className="text-gray-800 font-bold text-xl leading-snug group-hover:text-gray-900 transition-colors">
@@ -155,96 +156,66 @@ export function ProblemsSection() {
   }
 
   return (
-    <section className="py-24 lg:py-32 bg-gray-50/50 relative overflow-hidden">
-      {/* Background decoration: Animated blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="flex h-screen items-center px-12 md:px-24 bg-gray-50/50 w-max shrink-0 flex-nowrap">
+      {/* Header Section (Full Screen Width-ish Slide) */}
+      <div className="min-w-[450px] md:min-w-[700px] pr-20">
         <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 -left-20 w-[600px] h-[600px] rounded-full bg-teal-100/40 blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, -40, 0],
-            y: [0, 60, 0],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-0 -right-20 w-[500px] h-[500px] rounded-full bg-cyan-100/40 blur-[100px]"
-        />
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="inline-flex items-center gap-2 bg-white border border-slate-100 text-slate-600 px-6 py-2.5 rounded-full text-sm font-bold mb-8 shadow-sm"
+        >
+          <TrendingUp className="w-4 h-4" />
+          EL ÚNICO CAMINO AL ÉXITO DIGITAL
+        </motion.div>
+
+        <h2 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 tracking-tighter leading-none">
+          SIN UNA WEB, <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600 bg-300% animate-gradient">
+            PIERDES PACIENTES
+          </span>
+        </h2>
+
+        <p className="text-xl md:text-2xl text-gray-600 max-w-xl font-medium leading-relaxed">
+          El universo digital no perdona. Si no estás en la red con una imagen profesional,
+          <span className="text-gray-900 font-bold px-1">estás regalando tus pacientes</span> a quienes sí lo están.
+        </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
-        <div className="text-center mb-20">
+      {/* Problems Horizontal Stack */}
+      <div className="flex gap-12 items-center">
+        {problems.map((item, index) => (
+          <div key={index} className="min-w-[350px] md:min-w-[450px] h-[550px]">
+            <ProblemCard item={item} index={index} />
+          </div>
+        ))}
+      </div>
+
+      {/* CTA Final (As a slide) */}
+      <div className="min-w-[400px] md:min-w-[700px] flex flex-col items-center justify-center px-20">
+        <Magnetic strength={0.4}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white/50 backdrop-blur-sm border border-red-100 text-red-600 px-6 py-2.5 rounded-full text-sm font-bold mb-8 shadow-sm"
+            className="relative group p-[2px] rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 bg-300% animate-gradient shadow-[0_32px_100px_-20px_rgba(16,185,129,0.5)] w-full"
           >
-            <TrendingUp className="w-4 h-4" />
-            EL ÚNICO CAMINO AL ÉXITO DIGITAL
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight leading-none"
-          >
-            Sin una Página Web, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-300% animate-gradient">
-              Pierdes Pacientes
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-          >
-            El universo digital no perdona. Si no estás en la red con una imagen profesional,
-            <span className="text-gray-900 font-bold px-1">estás regalando tus pacientes</span> a quienes sí lo están.
-          </motion.p>
-        </div>
-
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto mb-20 perspective-1000">
-          {problems.map((item, index) => (
-            <ProblemCard key={index} item={item} index={index} />
-          ))}
-        </div>
-
-        {/* Final CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center"
-        >
-          <div className="relative group p-[2px] rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 bg-300% animate-gradient shadow-2xl shadow-emerald-500/30">
             <Button
               size="lg"
-              className="relative bg-white hover:bg-transparent text-emerald-900 hover:text-white transition-all duration-300 px-12 py-8 text-xl font-black rounded-full border-none h-auto group"
+              className="relative w-full bg-slate-900 hover:bg-transparent text-white transition-all duration-300 py-12 text-3xl font-black rounded-full border-none h-auto group overflow-hidden"
               onClick={handleWhatsApp}
             >
-              <Sparkles className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-              ¡SÍ, QUIERO MI WEB AHORA!
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 group-hover:scale-150 transition-transform duration-700" />
+              <div className="relative z-10 flex items-center justify-center">
+                <Sparkles className="w-10 h-10 mr-6 group-hover:rotate-12 transition-transform" />
+                ¡QUIERO MI WEB YA!
+                <ArrowRight className="w-10 h-10 ml-6 group-hover:translate-x-4 transition-transform" />
+              </div>
             </Button>
-          </div>
-          <p className="mt-6 text-gray-500 font-medium flex items-center gap-2">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-ping" />
-            Asesoría gratuita disponible vía WhatsApp
-          </p>
-        </motion.div>
+          </motion.div>
+        </Magnetic>
+        <p className="mt-10 text-gray-500 font-bold text-xl flex items-center gap-4">
+          <span className="w-4 h-4 bg-emerald-500 rounded-full animate-ping" />
+          Agenda tu consultoría gratuita hoy
+        </p>
       </div>
 
       <style jsx global>{`
@@ -260,10 +231,7 @@ export function ProblemsSection() {
         .bg-300\\% {
           background-size: 300% 300%;
         }
-        .perspective-1000 {
-          perspective: 1000px;
-        }
       `}</style>
-    </section>
+    </div>
   )
 }

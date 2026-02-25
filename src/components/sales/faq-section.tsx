@@ -14,78 +14,59 @@ export function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-teal-50/50 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-cyan-50/50 blur-3xl" />
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <Badge className="mb-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white border-0 px-4 py-1.5">
+    <div className="flex h-screen items-center px-6 md:px-24 bg-teal-50/30 w-screen shrink-0">
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+        {/* Header Slide */}
+        <div className="w-full">
+          <Badge className="mb-6 bg-gradient-to-r from-teal-500 to-cyan-500 text-white border-0 px-4 py-1.5 shadow-lg shadow-teal-500/20">
             <HelpCircle className="w-4 h-4 mr-1" />
             FAQ
           </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Preguntas
+          <h2 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-none tracking-tight">
+            RESUELVE <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
-              {' '}Frecuentes
+              TUS DUDAS
             </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Resolvemos tus dudas sobre nuestros servicios web para clínicas dentales.
+          <p className="text-xl text-gray-600 max-w-md font-medium mb-12">
+            Todo lo que necesitas saber sobre el despliegue de tu clínica dental en el mundo digital.
           </p>
-        </motion.div>
-
-        {/* Accordion */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq: FAQ, index: number) => (
-              <AccordionItem 
-                key={faq.id} 
-                value={faq.id}
-                className="bg-white rounded-2xl px-6 border border-gray-100 shadow-sm hover:shadow-md transition-all overflow-hidden"
-              >
-                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-teal-600 py-5 hover:no-underline">
-                  <span className="pr-4">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 pb-5 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <p className="text-gray-500 mb-4">¿Tienes otra pregunta?</p>
-          <Button 
+          <Button
             variant="outline"
-            className="gap-2 border-teal-200 text-teal-600 hover:bg-teal-50 hover:border-teal-300"
+            className="gap-3 border-teal-200 text-teal-600 hover:bg-teal-50 hover:border-teal-300 py-6 px-8 rounded-2xl text-lg font-bold shadow-xl"
             onClick={handleWhatsApp}
           >
-            <MessageCircle className="w-4 h-4" />
-            Escríbenos por WhatsApp
+            <MessageCircle className="w-5 h-5" />
+            Preguntar por WhatsApp
           </Button>
-        </motion.div>
+        </div>
+
+        {/* FAQ Items Slide */}
+        <div className="w-full">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq: FAQ, index: number) => (
+              <motion.div
+                key={faq.id}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <AccordionItem
+                  value={faq.id}
+                  className="bg-white rounded-[2rem] px-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden"
+                >
+                  <AccordionTrigger className="text-left font-bold text-gray-900 hover:text-teal-600 py-6 hover:no-underline text-xl">
+                    <span className="pr-4">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 pb-6 text-lg leading-relaxed font-medium">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
+            ))}
+          </Accordion>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }

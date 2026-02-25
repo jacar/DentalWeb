@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Boutique Dental Cálida y Minimalista | Bienestar</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eca413",
+                        "background-light": "#FAF9F6",
+                        "background-dark": "#221c10",
+                        "beige-soft": "#F5F0E1",
+                        "sand": "#E6DFCF",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-display {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header
+            class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-40 py-6 border-b border-sand/30 dark:border-white/10">
+            <div class="flex items-center justify-between max-w-[1400px] mx-auto">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-3xl">fluid_med</span>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-xl font-serif font-bold tracking-tight">Boutique
+                        Cálida</h2>
+                </div>
+                <nav class="hidden md:flex flex-1 justify-center gap-12">
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                        href="#">Filosofía</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                        href="#">Servicios</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                        href="#">Equipo</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                        href="#">Contacto</a>
+                </nav>
+                <div class="flex items-center">
+                    <button
+                        class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-full h-11 px-6 bg-primary text-slate-900 text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all">
+                        Reservar
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex flex-col flex-1">
+            <section class="px-6 md:px-20 lg:px-40 py-20 lg:py-32">
+                <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                    <div class="w-full lg:w-1/2 flex flex-col gap-8 order-2 lg:order-1">
+                        <div class="flex flex-col gap-4">
+                            <span class="text-primary font-bold uppercase tracking-[0.3em] text-xs">El Arte del
+                                Cuidado</span>
+                            <h1
+                                class="text-slate-900 dark:text-slate-100 text-5xl md:text-7xl font-serif leading-[1.1] tracking-tight">
+                                Un Santuario para tu Sonrisa
+                            </h1>
+                            <p
+                                class="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-xl">
+                                Experimente una odontología redefinida en un entorno tranquilo y premium, diseñado para
+                                su absoluto confort y bienestar integral.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <button
+                                class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-primary text-slate-900 text-base font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+                                Agendar una Visita
+                            </button>
+                            <button
+                                class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-14 px-8 border border-sand dark:border-white/20 text-slate-900 dark:text-slate-100 text-base font-bold uppercase tracking-widest hover:bg-beige-soft dark:hover:bg-white/5 transition-colors">
+                                Nuestra Filosofía
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                        <div
+                            class="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-beige-soft dark:bg-white/5 shadow-2xl">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
+                                data-alt="Sun-drenched minimalist dental waiting room with modern art"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9S4JDJhrtmmAK2PVCK1UReEj7Y92G83Nx6ThdAMxBmZQ0bwb-c-CuszvlKjglt33_rWhDbX05hPEoGbE31_zPlYOrthEHN6-wst3efN_3jYQCXw52_uK6WvB5xsmEF4bZUw5B4S4Rub5IPp3j4LtUw2Bi2-gZkz0u_rLzP03mk9cJ-A8SfHciv_8RXO8-VSm_lIIEXECKIWTeNcyKXhGeSJXysbMmeEjI4ZFzGpdduBJ5nij8yCcOilCzZI3Heo1fYoKCaBjYoOzY");'>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-background-light/20 to-transparent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-beige-soft dark:bg-background-dark/50 py-24 lg:py-40 px-6 md:px-20 lg:px-40">
+                <div class="max-w-[1400px] mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-20 items-start">
+                        <div class="flex flex-col gap-10">
+                            <div class="space-y-6">
+                                <span class="text-primary font-bold uppercase tracking-[0.3em] text-xs">Nuestra
+                                    Filosofía</span>
+                                <h2
+                                    class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-serif leading-tight">
+                                    Redefiniendo la Experiencia Dental
+                                </h2>
+                                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                                    Creemos que la salud bucal es la base del bienestar general. Nuestro enfoque combina
+                                    la excelencia clínica con un espacio que respira calma, claridad e intencionalidad.
+                                </p>
+                            </div>
+                            <div class="relative aspect-video rounded-xl overflow-hidden bg-sand dark:bg-white/10">
+                                <div class="absolute inset-0 bg-cover bg-center"
+                                    data-alt="Obra de arte abstracta minimalista en una pared blanca y limpia"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLYl7wK8KOFTfAg91YzsnXb8-iVzqV3DkDrEz_TD1jPBB1M_4G205TOsOguADyM98CGIzwou-fPVhGFnLvIUkW8Zrqvu0nff-FbthxD2z9mdWQGzYp7JiqmlGzBLNnNW5HJMag6CqS9Eqjp_WMD-79su5g2G2gFMRhkPyJBR67CrUyh0o790GB-LhAJn7SUOPQCuJ7tOvQQ-RJluDKfhdsYzWZ40B19D3CSevJkULs-j94XC3wAOdawPgq9Jl0hWC4YEfZjSUeu_pT");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid gap-12">
+                            <div
+                                class="group flex flex-col gap-6 p-8 rounded-2xl bg-background-light dark:bg-background-dark border border-transparent hover:border-sand dark:hover:border-primary/20 transition-all">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-3xl">spa</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-slate-900 dark:text-slate-100 text-2xl font-serif mb-3">Cuidado
+                                        Consciente</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+                                        Un enfoque suave que prioriza su tranquilidad. Hemos eliminado la sensación
+                                        clínica estéril, reemplazándola con calidez y un cuidado centrado en los
+                                        sentidos.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col gap-6 p-8 rounded-2xl bg-background-light dark:bg-background-dark border border-transparent hover:border-sand dark:hover:border-primary/20 transition-all">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-slate-900 dark:text-slate-100 text-2xl font-serif mb-3">Precisión
+                                        Moderna</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+                                        Utilizando la última odontología digital dentro de un marco minimalista para
+                                        asegurar los más altos estándares de precisión y resultados.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col gap-6 p-8 rounded-2xl bg-background-light dark:bg-background-dark border border-transparent hover:border-sand dark:hover:border-primary/20 transition-all">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-3xl">eco</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-slate-900 dark:text-slate-100 text-2xl font-serif mb-3">Elección
+                                        Sostenible</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+                                        Desde materiales ecológicos hasta sistemas sin papel, nuestra boutique está
+                                        diseñada para ser tan amable con la tierra como con su sonrisa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="px-6 md:px-20 lg:px-40 py-24 lg:py-40">
+                <div class="max-w-[1000px] mx-auto text-center flex flex-col items-center gap-10">
+                    <h2 class="text-slate-900 dark:text-slate-100 text-4xl md:text-6xl font-serif leading-tight">
+                        Experimente la Diferencia Boutique
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-xl font-light max-w-2xl leading-relaxed">
+                        Únase a nuestra comunidad y descubra un nuevo estándar de arte dental, donde cada cita se siente
+                        como un refugio.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <button
+                            class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-primary text-slate-900 text-base font-bold uppercase tracking-widest hover:shadow-xl hover:-translate-y-1 transition-all">
+                            Explorar Servicios
+                        </button>
+                        <button
+                            class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-14 px-8 border border-sand dark:border-white/20 text-slate-900 dark:text-slate-100 text-base font-bold uppercase tracking-widest hover:bg-beige-soft dark:hover:bg-white/5 transition-all">
+                            Contáctenos
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer
+            class="bg-background-light dark:bg-background-dark px-6 md:px-20 lg:px-40 py-20 border-t border-sand dark:border-white/10">
+            <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                <div class="flex flex-col gap-6 col-span-1 lg:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-2xl">fluid_med</span>
+                        <h2 class="text-slate-900 dark:text-slate-100 text-lg font-serif font-bold tracking-tight">
+                            Boutique Cálida</h2>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-xs">
+                        Una experiencia dental curada donde el diseño se encuentra con la excelencia clínica.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest">Conectar
+                    </h4>
+                    <nav class="flex flex-col gap-2">
+                        <a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Instagram</a>
+                        <a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Facebook</a>
+                        <a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">LinkedIn</a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest">Estudio
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        123 Minimalist Way<br />
+                        Serenity Valley, SV 90210
+                    </p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest">Boletín
+                    </h4>
+                    <div class="flex gap-2">
+                        <input
+                            class="bg-beige-soft/50 dark:bg-white/5 border border-sand dark:border-white/10 rounded-full px-4 h-10 text-sm w-full focus:ring-1 focus:ring-primary focus:border-primary outline-none"
+                            placeholder="Email" type="email" />
+                        <button
+                            class="bg-primary text-slate-900 rounded-full h-10 w-10 flex items-center justify-center hover:scale-105 transition-transform">
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-[1400px] mx-auto pt-20 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-400 text-xs tracking-widest uppercase">© 2024 Boutique Dental Cálida y Minimalista.
+                    Todos los derechos reservados.</p>
+                <div class="flex gap-8">
+                    <a class="text-slate-400 hover:text-primary text-xs tracking-widest uppercase transition-colors"
+                        href="#">Privacidad</a>
+                    <a class="text-slate-400 hover:text-primary text-xs tracking-widest uppercase transition-colors"
+                        href="#">Términos</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Boutique Dental de Élite | Diseño y Salud</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#144bb8",
+            "background-light": "#f6f6f8",
+            "background-dark": "#111621",
+          },
+          fontFamily: {
+            "display": ["Newsreader", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Newsreader', serif;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20">
+  <div class="relative min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 md:px-20 py-8 bg-background-light/80 backdrop-blur-md dark:bg-background-dark/80">
+      <div class="flex items-center gap-2">
+        <span class="text-xl font-light tracking-widest uppercase">Elite Dental</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-12">
+        <a class="text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#">Filosofía</a>
+        <a class="text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#">Servicios</a>
+        <a class="text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#">Galería</a>
+        <a class="text-xs tracking-widest uppercase hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
+          href="#">Consultar</a>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col">
+      <section class="relative min-h-screen flex flex-col items-center justify-center pt-20">
+        <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+          <div class="flex flex-col gap-8 order-2 lg:order-1">
+            <h1 class="text-6xl md:text-8xl font-light leading-[1.1] tracking-tight text-slate-900 dark:text-slate-100">
+              El Arte de <br />
+              <span class="italic font-normal">la Sonrisa</span>
+            </h1>
+            <p class="max-w-md text-lg text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+              Un enfoque ultra-minimalista para el arte dental de élite y la excelencia restauradora en un entorno
+              privado de boutique.
+            </p>
+            <div class="pt-4">
+              <a class="group inline-flex items-center gap-2 text-sm tracking-widest uppercase border-b border-slate-300 dark:border-slate-700 pb-2 hover:border-primary transition-all"
+                href="#">
+                Descubre la Galería
+                <span
+                  class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 flex justify-center">
+            <div class="relative w-full aspect-[4/5] max-w-md overflow-hidden bg-slate-200 dark:bg-slate-800 rounded">
+              <img alt="The Art of the Smile"
+                class="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-1000"
+                data-alt="Artistic close up of a perfect white tooth on gray background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtKkkbNu3fn042_Pz_klX1MkySluFUXC5xG7oaG5iDPUuQ5g136zmbJKuyj2rln31Mvk_sQyviWNG-ea_ZlETqL9t3nAA9iztQa8o5IhKhiIOAt5ARRBHtSmI0DK8C6ZwCsifRy6eJofq146SXyO1uEdPvP1kF2RoLiN2YZU18nu6YDm2Bs6VcdjSWRD6RUxLPvi0Vk9wwZJKG3DKQk-8Gvmk2NCXXJPbVh_RiqlW1RBdCsIwr-8D_fAMBf5uMKqrCR1uvDuuaaQbG" />
+              <div class="absolute inset-0 bg-gradient-to-t from-background-light/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Grid -->
+      <section class="py-32 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="mb-20">
+            <h2 class="text-xs tracking-[0.3em] uppercase text-primary font-bold">Especialidades</h2>
+            <div class="h-px w-12 bg-primary mt-4"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-slate-100 dark:border-slate-800">
+            <!-- Service Item -->
+            <div
+              class="group p-12 border-r border-b md:border-b-0 border-slate-100 dark:border-slate-800 hover:bg-background-light dark:hover:bg-slate-800/50 transition-colors">
+              <span
+                class="material-symbols-outlined text-slate-300 dark:text-slate-600 mb-8 block text-3xl font-light">auto_awesome</span>
+              <h3 class="text-2xl font-light mb-6">Odontología Estética</h3>
+              <p class="text-slate-500 dark:text-slate-400 font-light leading-relaxed mb-8">
+                Perfeccionando la estética a través del arte avanzado en porcelana y protocolos de blanqueamiento a
+                medida diseñados para su anatomía única.
+              </p>
+              <a class="text-xs tracking-widest uppercase text-slate-400 group-hover:text-primary transition-colors"
+                href="#">Detalles</a>
+            </div>
+            <!-- Service Item -->
+            <div
+              class="group p-12 border-r border-b md:border-b-0 border-slate-100 dark:border-slate-800 hover:bg-background-light dark:hover:bg-slate-800/50 transition-colors">
+              <span
+                class="material-symbols-outlined text-slate-300 dark:text-slate-600 mb-8 block text-3xl font-light">biotech</span>
+              <h3 class="text-2xl font-light mb-6">Cuidado Restaurador</h3>
+              <p class="text-slate-500 dark:text-slate-400 font-light leading-relaxed mb-8">
+                Reconstruyendo la función con implantes diseñados con precisión y coronas cerámicas que miman la
+                biología natural.
+              </p>
+              <a class="text-xs tracking-widest uppercase text-slate-400 group-hover:text-primary transition-colors"
+                href="#">Detalles</a>
+            </div>
+            <!-- Service Item -->
+            <div
+              class="group p-12 border-r border-slate-100 dark:border-slate-800 hover:bg-background-light dark:hover:bg-slate-800/50 transition-colors">
+              <span
+                class="material-symbols-outlined text-slate-300 dark:text-slate-600 mb-8 block text-3xl font-light">shield_moon</span>
+              <h3 class="text-2xl font-light mb-6">Excelencia Preventiva</h3>
+              <p class="text-slate-500 dark:text-slate-400 font-light leading-relaxed mb-8">
+                Manteniendo la salud bucal a largo plazo a través de meticulosos estándares clínicos y monitoreo
+                diagnóstico proactivo.
+              </p>
+              <a class="text-xs tracking-widest uppercase text-slate-400 group-hover:text-primary transition-colors"
+                href="#">Detalles</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Philosophy Section -->
+      <section class="py-40 bg-background-light dark:bg-background-dark overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div class="relative">
+            <div
+              class="absolute -top-10 -left-10 text-[10rem] font-display italic text-slate-200 dark:text-slate-800 select-none opacity-50">
+              Studio</div>
+            <h2 class="relative text-4xl md:text-5xl font-light leading-tight">
+              La Experiencia Boutique: <br />
+              <span class="text-slate-400 italic">Donde la precisión se une al silencio.</span>
+            </h2>
+          </div>
+          <div class="flex flex-col gap-10">
+            <div class="flex gap-6">
+              <div class="flex-shrink-0 w-px h-12 bg-primary/30"></div>
+              <div>
+                <h4 class="text-sm tracking-widest uppercase font-semibold mb-2">Lujo Silencioso</h4>
+                <p class="text-slate-500 dark:text-slate-400 font-light italic text-sm">Un entorno sereno diseñado para
+                  el completo confort sensorial.</p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0 w-px h-12 bg-primary/30"></div>
+              <div>
+                <h4 class="text-sm tracking-widest uppercase font-semibold mb-2">Tecnología Avanzada</h4>
+                <p class="text-slate-500 dark:text-slate-400 font-light italic text-sm">Equipada con las herramientas de
+                  diagnóstico digital más sofisticadas del mundo.</p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0 w-px h-12 bg-primary/30"></div>
+              <div>
+                <h4 class="text-sm tracking-widest uppercase font-semibold mb-2">Visión Artística</h4>
+                <p class="text-slate-500 dark:text-slate-400 font-light italic text-sm">Cada procedimiento se trata como
+                  una obra de arte única y no replicable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="border-t border-slate-200 dark:border-slate-800 py-16 px-8 md:px-20 bg-white dark:bg-background-dark">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+        <div class="flex flex-col gap-6">
+          <h2 class="text-xl font-light tracking-widest uppercase">Elite Dental Boutique</h2>
+          <p class="text-xs text-slate-400 leading-relaxed uppercase tracking-tighter">
+            San Francisco  ·  New York  ·  London
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+          <div class="flex flex-col gap-4">
+            <span class="text-[10px] tracking-[0.2em] uppercase text-slate-400">Legal</span>
+            <a class="text-sm font-light hover:text-primary transition-colors" href="#">Política de Privacidad</a>
+            <a class="text-sm font-light hover:text-primary transition-colors" href="#">Términos de Servicio</a>
+          </div>
+          <div class="flex flex-col gap-4">
+            <span class="text-[10px] tracking-[0.2em] uppercase text-slate-400">Social</span>
+            <a class="text-sm font-light hover:text-primary transition-colors" href="#">Instagram</a>
+            <a class="text-sm font-light hover:text-primary transition-colors" href="#">LinkedIn</a>
+          </div>
+          <div class="flex flex-col gap-4 col-span-2 md:col-span-1">
+            <span class="text-[10px] tracking-[0.2em] uppercase text-slate-400">Contacto</span>
+            <a class="text-sm font-light hover:text-primary transition-colors underline decoration-slate-200 underline-offset-4"
+              href="mailto:studio@elitedental.com">studio@elitedental.com</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-100 dark:border-slate-900 flex justify-between items-center text-[10px] tracking-widest uppercase text-slate-400">
+        <p>© 2024 Boutique Dental de Élite. Todos los derechos reservados.</p>
+        <p>Diseñado para la Excelencia</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

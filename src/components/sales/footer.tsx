@@ -1,9 +1,10 @@
 'use client'
 
-import { Smile, Heart, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, ArrowRight, Sparkles } from 'lucide-react'
+import { Smile, Heart, Mail, Phone, MapPin, ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
+import { Magnetic } from './magnetic'
 
 export function SalesFooter() {
   const currentYear = new Date().getFullYear()
@@ -38,25 +39,28 @@ export function SalesFooter() {
       {/* CTA Section */}
       <div className="border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-slate-700"
+            className="flex flex-col md:flex-row items-center justify-between gap-10 bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] p-10 md:p-16 border border-white/5 shadow-2xl relative overflow-hidden group"
           >
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-2">¿Listo para tener tu página web?</h3>
-              <p className="text-slate-300">Solicita tu demo gratis y te contactamos en 24 horas.</p>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 blur-[100px] -mr-48 -mt-48" />
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter leading-none uppercase">¿LISTO PARA EL <br /><span className="text-blue-500 font-serif italic normal-case">siguiente nivel</span>?</h3>
+              <p className="text-slate-400 text-lg font-medium max-w-md">Solicita tu demo hoy y transformaremos tu clínica dental en una marca de élite.</p>
             </div>
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white gap-2 shadow-lg shadow-green-500/25 flex-shrink-0"
-              onClick={handleWhatsApp}
-            >
-              <Sparkles className="w-4 h-4" />
-              Demo Gratis
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            <Magnetic strength={0.4}>
+              <Button
+                size="lg"
+                className="bg-white text-slate-950 hover:bg-slate-100 rounded-full px-12 py-10 text-2xl font-black gap-4 shadow-[0_20px_50px_rgba(255,255,255,0.1)] flex-shrink-0 group"
+                onClick={handleWhatsApp}
+              >
+                <Sparkles className="w-6 h-6 fill-slate-950" />
+                Obtener Demo
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              </Button>
+            </Magnetic>
           </motion.div>
         </div>
       </div>
@@ -67,28 +71,17 @@ export function SalesFooter() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:shadow-teal-500/40 transition-shadow">
-                <Smile className="w-6 h-6 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold">DentalWeb</span>
-                <span className="text-xs text-slate-400 -mt-0.5">Para Odontólogos</span>
+              <div className="h-10 lg:h-12 w-auto overflow-hidden">
+                <img
+                  src="/images/logodental.png"
+                  alt="Logo DentalWeb"
+                  className="h-full w-auto object-contain brightness-0 invert"
+                />
               </div>
             </Link>
             <p className="text-slate-400 mb-6 leading-relaxed max-w-sm">
               Especialistas en desarrollo web para clínicas dentales. Más de 200 odontólogos en Colombia confían en nosotros.
             </p>
-            <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-gradient-to-br hover:from-teal-500 hover:to-cyan-500 flex items-center justify-center transition-all duration-300">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-gradient-to-br hover:from-teal-500 hover:to-cyan-500 flex items-center justify-center transition-all duration-300">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-gradient-to-br hover:from-teal-500 hover:to-cyan-500 flex items-center justify-center transition-all duration-300">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Servicios */}

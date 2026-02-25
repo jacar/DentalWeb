@@ -13,18 +13,18 @@ export const useFavoritesStore = create<FavoritesState>()(
   persist(
     (set, get) => ({
       favorites: [],
-      
-      addFavorite: (id) => set((state) => ({
+
+      addFavorite: (id: string) => set((state) => ({
         favorites: [...state.favorites, id]
       })),
-      
-      removeFavorite: (id) => set((state) => ({
+
+      removeFavorite: (id: string) => set((state) => ({
         favorites: state.favorites.filter((fav) => fav !== id)
       })),
-      
-      isFavorite: (id) => get().favorites.includes(id),
-      
-      toggleFavorite: (id) => {
+
+      isFavorite: (id: string) => get().favorites.includes(id),
+
+      toggleFavorite: (id: string) => {
         const { favorites, addFavorite, removeFavorite } = get()
         if (favorites.includes(id)) {
           removeFavorite(id)
@@ -34,7 +34,9 @@ export const useFavoritesStore = create<FavoritesState>()(
       }
     }),
     {
-      name: 'dental-templates-favorites'
+      name: 'dental-templates-favorites',
+      // Solo intentar acceder a storage si estamos en el cliente
+      storage: typeof window !== 'undefined' ? localStorage : undefined
     }
   )
 )

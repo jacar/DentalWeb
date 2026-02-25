@@ -14,22 +14,45 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DentalWeb - Diseno y Desarrollo Web para Odontologos",
-  description: "Creamos paginas web profesionales para clinicas dentales. Consigue mas pacientes con un sitio web moderno. Cotizacion gratis.",
-  keywords: ["diseno web dental", "pagina web odontologo", "clinica dental web", "desarrollo web dentista", "marketing dental"],
-  authors: [{ name: "DentalWeb" }],
+  title: "DentalWeb | Diseño Web de Élite para Odontólogos",
+  description: "Transformamos clínicas dentales en marcas de prestigio. Páginas web premium con animaciones 3D, SEO local y conversión garantizada para especialistas dentales.",
+  keywords: [
+    "diseño web odontólogos",
+    "branding para dentistas",
+    "páginas web clínicas dentales",
+    "marketing dental profesional",
+    "posicionamiento seo dentistas",
+    "dental web design"
+  ],
+  authors: [{ name: "DentalWeb Premium" }],
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  robots: "index, follow",
+  themeColor: "#0d9488",
   icons: {
     icon: "/logo.svg",
+    apple: "/logo.svg",
   },
   openGraph: {
-    title: "DentalWeb - Diseno Web para Odontologos",
-    description: "Paginas web profesionales para clinicas dentales. Consigue mas pacientes.",
+    title: "DentalWeb | El Futuro de tu Clínica es Digital",
+    description: "Diseño web de alto impacto para odontólogos de élite. Consigue más pacientes hoy.",
     type: "website",
+    locale: "es_MX",
+    url: "https://dentalweb.pro",
+    siteName: "DentalWeb",
+    images: [
+      {
+        url: "/images/despues_dental.png",
+        width: 1200,
+        height: 630,
+        alt: "DentalWeb Premium Design Preview",
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DentalWeb - Diseno Web para Odontologos",
-    description: "Paginas web profesionales para clinicas dentales.",
+    title: "DentalWeb | Diseño Web Premium para Dentistas",
+    description: "Lleva tu clínica al siguiente nivel con tecnología visual de vanguardia.",
+    images: ["/images/despues_dental.png"],
   },
 };
 
