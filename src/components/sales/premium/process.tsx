@@ -45,7 +45,7 @@ export function PremiumProcess() {
     })
 
     return (
-        <section ref={containerRef} className="py-32 bg-slate-950 relative overflow-hidden">
+        <section ref={containerRef} className="py-16 lg:py-32 bg-slate-950 relative overflow-hidden">
             <div className="container px-6 mx-auto">
                 <div className="text-center max-w-4xl mx-auto mb-32">
                     <motion.span
@@ -78,7 +78,7 @@ export function PremiumProcess() {
                             return (
                                 <div key={step.title} className="relative flex items-center justify-center md:justify-between group">
                                     {/* Icon Circle */}
-                                    <div className="absolute left-[-15px] md:left-1/2 w-[60px] h-[60px] rounded-full bg-slate-900 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center justify-center -translate-x-1/2 z-20 transition-all group-hover:scale-110 group-hover:border-blue-500/50">
+                                    <div className="absolute left-[-15px] md:left-1/2 w-[60px] h-[60px] rounded-full bg-slate-900 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center justify-center -translate-x-1/2 z-20 transition-all lg:group-hover:scale-110 lg:group-hover:border-blue-500/50">
                                         <step.icon className="w-6 h-6 text-blue-400" />
                                     </div>
 

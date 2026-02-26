@@ -44,7 +44,7 @@ const services = [
 
 export function PremiumServices() {
     return (
-        <section className="py-32 bg-white dark:bg-slate-950 overflow-hidden">
+        <section className="py-16 lg:py-32 bg-white dark:bg-slate-950 overflow-hidden">
             <div className="container px-6 mx-auto">
                 <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
                     <div className="max-w-3xl">
@@ -87,15 +87,15 @@ export function PremiumServices() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                            className="group relative p-12 border border-slate-100 dark:border-slate-900 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors duration-500 overflow-hidden"
+                            className="group relative p-12 border border-slate-100 dark:border-slate-900 lg:hover:bg-slate-50 dark:lg:hover:bg-slate-900/50 transition-colors duration-500 overflow-hidden"
                         >
                             {/* Decorative number */}
-                            <span className="absolute top-8 right-12 text-6xl font-black text-slate-50 dark:text-slate-900 group-hover:text-blue-50/50 dark:group-hover:text-blue-900/20 transition-colors duration-500 -z-10">
+                            <span className="absolute top-8 right-12 text-6xl font-black text-slate-50 dark:text-slate-900 lg:group-hover:text-blue-50/50 dark:lg:group-hover:text-blue-900/20 transition-colors duration-500 -z-10">
                                 0{index + 1}
                             </span>
 
                             <div className="flex flex-col h-full">
-                                <div className="mb-8 p-4 w-fit rounded-2xl bg-slate-50 dark:bg-slate-900 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                                <div className="mb-8 p-4 w-fit rounded-2xl bg-slate-50 dark:bg-slate-900 lg:group-hover:bg-blue-600 lg:group-hover:text-white transition-all duration-500">
                                     <service.icon className="w-8 h-8" />
                                 </div>
 

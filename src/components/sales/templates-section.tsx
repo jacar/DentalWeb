@@ -222,12 +222,13 @@ export function TemplatesSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         className="min-w-[320px] md:min-w-[400px]"
                     >
-                        <Card className="overflow-hidden border-0 shadow-2xl bg-white h-[600px] flex flex-col group/card transition-all duration-500 hover:-translate-y-4">
+                        <Card className="overflow-hidden border-0 shadow-2xl bg-white h-[600px] flex flex-col group/card transition-all duration-500 lg:hover:-translate-y-4">
                             <div className="relative aspect-[4/5] overflow-hidden">
                                 <img
                                     src={template.image}
                                     alt={template.title}
-                                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/card:scale-110"
+                                    className="w-full h-full object-cover object-top transition-transform duration-700 lg:group-hover/card:scale-110"
+                                    loading="lazy"
                                 />
                                 <Badge className="absolute top-4 right-4 bg-white text-gray-900 font-bold px-3 py-1 shadow-xl">
                                     {template.tag}

@@ -103,7 +103,7 @@ export function PremiumStickyHero() {
                 </motion.div>
 
                 {/* Content */}
-                <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 z-10 flex items-center min-h-screen">
+                <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 z-10 flex items-center min-h-screen pb-24 md:pb-32">
                     <div className="w-full">
 
                         {/* Content Area */}
@@ -203,12 +203,12 @@ export function PremiumStickyHero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
+                    className="hidden [@media(min-height:900px)]:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-3 z-10"
                 >
                     <span className="text-[10px] uppercase tracking-[0.3em] text-teal-400 font-bold">Desliza para ver la transformación</span>
                     <div className="w-[1px] h-12 bg-gradient-to-b from-teal-400 to-transparent" />
                 </motion.div>
             </div>
-        </section>
+        </section >
     )
 }

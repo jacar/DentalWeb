@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { XCircle, CheckCircle, ArrowRight, TrendingUp, Sparkles } from 'lucide-react'
+import { XCircle, CheckCircle, ArrowRight, TrendingUp, Sparkles, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useState, useRef, MouseEvent } from 'react'
 import { Magnetic } from './magnetic'
@@ -196,19 +196,27 @@ export function ProblemsSection() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="relative group p-[2px] rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 bg-300% animate-gradient shadow-[0_32px_100px_-20px_rgba(16,185,129,0.5)] w-full"
           >
             <Button
               size="lg"
-              className="relative w-full bg-slate-900 hover:bg-transparent text-white transition-all duration-300 py-12 text-3xl font-black rounded-full border-none h-auto group overflow-hidden"
+              className="relative bg-red-600 hover:bg-red-700 text-white rounded-2xl md:rounded-[32px] px-8 md:px-16 py-6 md:py-12 text-lg md:text-3xl font-black group overflow-hidden shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:shadow-[0_0_80px_rgba(220,38,38,0.6)] transition-all duration-500 max-w-[90vw] mx-auto md:max-w-none"
               onClick={handleWhatsApp}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 group-hover:scale-150 transition-transform duration-700" />
-              <div className="relative z-10 flex items-center justify-center">
-                <Sparkles className="w-10 h-10 mr-6 group-hover:rotate-12 transition-transform" />
-                ¡QUIERO MI WEB YA!
-                <ArrowRight className="w-10 h-10 ml-6 group-hover:translate-x-4 transition-transform" />
+              {/* Pulse effect */}
+              <div className="absolute inset-0 border-4 border-red-500/50 rounded-2xl md:rounded-[32px] animate-ping opacity-20" />
+
+              {/* Shine effect */}
+              <div className="absolute inset-0 opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent lg:group-hover:translate-x-[200%] transition-transform duration-1000 -skew-x-12" />
               </div>
+
+              <span className="relative flex items-center gap-3 md:gap-4 tracking-tight lg:group-hover:scale-110 transition-transform duration-500">
+                ¡QUIERO MI WEB YA!
+                <Zap className="w-6 h-6 md:w-10 md:h-10 fill-yellow-400 text-yellow-500 lg:group-hover:rotate-12 lg:group-hover:scale-125 transition-all duration-500" />
+              </span>
+
+              {/* Hover ring */}
+              <div className="absolute inset-[-2px] rounded-2xl md:rounded-[32px] border-2 border-white/20 lg:group-hover:border-white/50 scale-[0.98] lg:group-hover:scale-100 transition-all duration-500 opacity-0 lg:group-hover:opacity-100" />
             </Button>
           </motion.div>
         </Magnetic>
