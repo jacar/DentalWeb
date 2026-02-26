@@ -30,23 +30,23 @@ export function HorizontalSection({ children, horizontalWidth = "300", showDecor
     const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${(parseInt(horizontalWidth) - 100)}%`])
 
     return (
-        <section ref={targetRef} className="relative bg-white" style={{ height: `${horizontalWidth}vh` }}>
-            <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        <section ref={targetRef} className="relative bg-white h-auto lg:h-[var(--h-width)]" style={{ '--h-width': `${horizontalWidth}vh` } as React.CSSProperties}>
+            <div className="relative lg:sticky top-0 h-auto lg:h-screen flex flex-col lg:flex-row lg:items-center overflow-hidden">
                 {/* Background Decoration Layer (Now sticky too) */}
                 {showDecorations && (
-                    <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 z-0 hidden lg:block">
                         <FallingDentalElements progress={scrollYProgress} />
                     </div>
                 )}
 
-                <motion.div style={{ x }} className="flex h-full items-center relative z-10 w-full">
+                <motion.div style={{ x }} className="flex flex-col lg:flex-row h-auto lg:h-full lg:items-center relative z-10 w-full max-lg:!transform-none">
                     <HorizontalSectionContext.Provider value={scrollYProgress}>
                         {children}
                     </HorizontalSectionContext.Provider>
                 </motion.div>
 
                 {/* Subtle Horizontal Progress Indicator */}
-                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-white/10 rounded-full overflow-hidden z-20">
+                <div className="hidden lg:block absolute bottom-12 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-white/10 rounded-full overflow-hidden z-20">
                     <motion.div
                         style={{ scaleX: scrollYProgress }}
                         className="h-full bg-teal-500 origin-left"

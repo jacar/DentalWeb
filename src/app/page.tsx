@@ -37,7 +37,7 @@ export default function Home() {
         <ProblemsSection />
 
         {/* Results Slide 1 */}
-        <div className="min-w-[85vw] md:min-w-[75vw] h-screen flex flex-col justify-center px-12 bg-white">
+        <div className="w-full lg:min-w-[85vw] lg:md:min-w-[75vw] min-h-[80vh] lg:h-screen flex flex-col justify-center px-6 lg:px-12 py-16 lg:py-0 bg-white border-t lg:border-t-0 border-slate-100">
           <div className="text-center mb-10">
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
               Resultados <span className="text-teal-600 tracking-normal italic font-serif lowercase">visibles</span>
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
 
         {/* Results Slide 2 */}
-        <div className="min-w-[85vw] md:min-w-[75vw] h-screen flex flex-col justify-center px-24 bg-white border-l border-slate-50">
+        <div className="w-full lg:min-w-[85vw] lg:md:min-w-[75vw] min-h-[80vh] lg:h-screen flex flex-col justify-center px-6 lg:px-24 py-16 lg:py-0 bg-white border-t border-l-0 lg:border-t-0 lg:border-l border-slate-100">
           <div className="text-center mb-10">
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
               Ortodoncia <span className="text-blue-600 tracking-normal italic font-serif lowercase">avanzada</span>

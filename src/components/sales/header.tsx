@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Smile, Menu, X, Phone, MessageCircle, Sparkles, Zap } from 'lucide-react'
+import { Menu, X, MessageCircle, Sparkles, Zap } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'

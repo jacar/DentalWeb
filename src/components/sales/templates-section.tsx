@@ -189,9 +189,9 @@ export function TemplatesSection() {
     }
 
     return (
-        <div className="flex h-screen items-center px-12 md:px-24 bg-slate-50 w-max shrink-0 flex-nowrap">
+        <div className="flex flex-col lg:flex-row h-auto lg:h-screen items-center px-6 lg:px-12 md:px-24 py-24 lg:py-0 bg-slate-50 w-full lg:w-max shrink-0 flex-nowrap gap-16 lg:gap-0">
             {/* Header Content */}
-            <div className="min-w-[400px] md:min-w-[550px] pr-16 shrink-0">
+            <div className="w-full lg:min-w-[400px] md:min-w-[550px] lg:pr-16 shrink-0 text-center lg:text-left">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -214,13 +214,13 @@ export function TemplatesSection() {
             </div>
 
             {/* Horizontal Templates List */}
-            <div className="flex gap-8 items-center">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-center w-full lg:w-auto">
                 {templates.map((template, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="min-w-[320px] md:min-w-[400px]"
+                        className="w-full sm:w-[90%] md:w-[80%] lg:w-auto lg:min-w-[320px] md:min-w-[400px]"
                     >
                         <Card className="overflow-hidden border-0 shadow-2xl bg-white h-[600px] flex flex-col group/card transition-all duration-500 lg:hover:-translate-y-4">
                             <div className="relative aspect-[4/5] overflow-hidden">

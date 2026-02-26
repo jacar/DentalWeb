@@ -3,8 +3,8 @@
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, Check, Sparkles, Star, Users, Play } from 'lucide-react'
-import { useRef, useEffect, useState } from 'react'
+import { ArrowRight, Check, Sparkles, Users } from 'lucide-react'
+import { useRef, useEffect } from 'react'
 import { Magnetic } from '../magnetic'
 
 export function PremiumStickyHero() {
@@ -24,7 +24,6 @@ export function PremiumStickyHero() {
 
     const sectionRef = useRef<HTMLDivElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false)
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -82,7 +81,6 @@ export function PremiumStickyHero() {
                         muted
                         playsInline
                         preload="auto"
-                        onLoadedData={() => setIsVideoLoaded(true)}
                         className="w-full h-full object-cover"
                     />
                     {/* Brighter Cinematic Overlays */}

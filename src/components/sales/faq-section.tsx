@@ -14,7 +14,7 @@ export function FAQSection() {
   }
 
   return (
-    <div className="flex h-screen items-center px-6 md:px-24 bg-teal-50/30 w-screen shrink-0">
+    <div className="flex h-auto lg:h-screen items-center px-6 md:px-24 py-20 lg:py-0 bg-teal-50/30 w-full lg:w-screen shrink-0">
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
         {/* Header Slide */}
         <div className="w-full">

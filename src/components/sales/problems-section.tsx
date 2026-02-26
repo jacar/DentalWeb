@@ -156,9 +156,9 @@ export function ProblemsSection() {
   }
 
   return (
-    <div className="flex h-screen items-center px-12 md:px-24 bg-gray-50/50 w-max shrink-0 flex-nowrap">
+    <div className="flex flex-col lg:flex-row h-auto lg:h-screen items-center px-6 lg:px-12 md:px-24 py-24 lg:py-0 bg-gray-50/50 w-full lg:w-max shrink-0 flex-nowrap gap-16 lg:gap-0">
       {/* Header Section (Full Screen Width-ish Slide) */}
-      <div className="min-w-[450px] md:min-w-[700px] pr-20">
+      <div className="w-full lg:min-w-[450px] lg:md:min-w-[700px] lg:pr-20">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -168,7 +168,7 @@ export function ProblemsSection() {
           EL ÚNICO CAMINO AL ÉXITO DIGITAL
         </motion.div>
 
-        <h2 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 tracking-tighter leading-none">
+        <h2 className="text-5xl sm:text-6xl md:text-8xl font-black text-gray-900 mb-8 tracking-tighter leading-none hyphens-auto break-words lg:break-normal">
           SIN UNA WEB, <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600 bg-300% animate-gradient">
             PIERDES PACIENTES
@@ -182,16 +182,16 @@ export function ProblemsSection() {
       </div>
 
       {/* Problems Horizontal Stack */}
-      <div className="flex gap-12 items-center">
+      <div className="flex flex-col lg:flex-row gap-12 items-center w-full lg:w-auto">
         {problems.map((item, index) => (
-          <div key={index} className="min-w-[350px] md:min-w-[450px] h-[550px]">
+          <div key={index} className="w-full sm:w-[90%] md:w-[80%] lg:w-auto lg:min-w-[350px] md:min-w-[450px] lg:h-[550px]">
             <ProblemCard item={item} index={index} />
           </div>
         ))}
       </div>
 
       {/* CTA Final (As a slide) */}
-      <div className="min-w-[400px] md:min-w-[700px] flex flex-col items-center justify-center px-20">
+      <div className="w-full lg:min-w-[400px] lg:md:min-w-[700px] flex flex-col items-center justify-center lg:px-20 mt-8 lg:mt-0">
         <Magnetic strength={0.4}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
