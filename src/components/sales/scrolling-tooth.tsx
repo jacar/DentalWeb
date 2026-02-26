@@ -18,6 +18,25 @@ export function ScrollingTooth({ containerRef }: { containerRef: React.RefObject
     const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1.25, 1.1])
     const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [0, 2, 0])
 
+    // Text label animation
+    const labelText = useTransform(
+        scrollYProgress,
+        [0, 0.45, 0.8],
+        ["¿CLÍNICA INVISIBLE?", "¿PERDIENDO CITAS?", "¡TOMA EL CONTROL!"]
+    )
+
+    // Dot indicators animation
+    const points = [0.2, 0.5, 0.85]
+
+    const dotWidth1 = useTransform(scrollYProgress, [0.1, 0.2, 0.3], ["12px", "40px", "12px"])
+    const dotBg1 = useTransform(scrollYProgress, [0.1, 0.2, 0.3], ["#f1f5f9", "#0d9488", "#f1f5f9"])
+
+    const dotWidth2 = useTransform(scrollYProgress, [0.4, 0.5, 0.6], ["12px", "40px", "12px"])
+    const dotBg2 = useTransform(scrollYProgress, [0.4, 0.5, 0.6], ["#f1f5f9", "#0d9488", "#f1f5f9"])
+
+    const dotWidth3 = useTransform(scrollYProgress, [0.75, 0.85, 0.95], ["12px", "40px", "12px"])
+    const dotBg3 = useTransform(scrollYProgress, [0.75, 0.85, 0.95], ["#f1f5f9", "#0d9488", "#f1f5f9"])
+
     return (
         <div className="relative w-full flex flex-col items-center justify-center z-20">
             <motion.div
@@ -54,30 +73,25 @@ export function ScrollingTooth({ containerRef }: { containerRef: React.RefObject
                     animate={{ y: 0, opacity: 1 }}
                 >
                     <div className="bg-white rounded-[1.6rem] px-8 py-5 text-center">
-                        <motion.span className="block font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-700 to-cyan-900 text-2xl sm:text-3xl uppercase tracking-tighter leading-none mb-2">
-                            {useTransform(scrollYProgress,
-                                [0, 0.45, 0.8],
-                                ["¿CLÍNICA INVISIBLE?", "¿PERDIENDO CITAS?", "¡TOMA EL CONTROL!"]
-                            )}
+                        <motion.span
+                            className="block font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-700 to-cyan-900 text-2xl sm:text-3xl uppercase tracking-tighter leading-none mb-2"
+                        >
+                            {labelText}
                         </motion.span>
 
                         <div className="flex justify-center gap-3 mt-2">
-                            {[0.2, 0.5, 0.85].map((point, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="h-2 rounded-full bg-slate-100"
-                                    style={{
-                                        width: useTransform(scrollYProgress,
-                                            [point - 0.1, point, point + 0.1],
-                                            ["12px", "40px", "12px"]
-                                        ),
-                                        backgroundColor: useTransform(scrollYProgress,
-                                            [point - 0.1, point, point + 0.1],
-                                            ["#f1f5f9", "#0d9488", "#f1f5f9"]
-                                        )
-                                    }}
-                                />
-                            ))}
+                            <motion.div
+                                className="h-2 rounded-full"
+                                style={{ width: dotWidth1, backgroundColor: dotBg1 }}
+                            />
+                            <motion.div
+                                className="h-2 rounded-full"
+                                style={{ width: dotWidth2, backgroundColor: dotBg2 }}
+                            />
+                            <motion.div
+                                className="h-2 rounded-full"
+                                style={{ width: dotWidth3, backgroundColor: dotBg3 }}
+                            />
                         </div>
                     </div>
                 </motion.div>
