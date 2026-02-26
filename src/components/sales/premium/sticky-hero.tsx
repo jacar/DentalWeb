@@ -56,9 +56,9 @@ export function PremiumStickyHero() {
     }, [smoothProgress])
 
     // Para desvanecer el contenido de texto al final del scroll de la sección hero
-    const contentOpacity = useTransform(scrollYProgress, [0.9, 1], [1, 0])
+    const contentOpacity = useTransform(scrollYProgress, [0.9, 1], [1, 1])
     const contentScale = useTransform(scrollYProgress, [0.9, 1], [1, 0.95])
-    const videoOpacity = useTransform(scrollYProgress, [0.92, 1], [1, 0.5])
+    const videoOpacity = useTransform(scrollYProgress, [0.92, 1], [1, 1])
     const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
 
     // Animación de desplazamiento horizontal ajustada para asegurar la lectura completa hasta "DENTAL"
@@ -66,7 +66,7 @@ export function PremiumStickyHero() {
     const letterSpacing = useTransform(scrollYProgress, [0, 0.5], ["-0.02em", "0.05em"])
 
     return (
-        <section ref={sectionRef} className="relative h-[300vh] bg-slate-950 overflow-visible">
+        <section ref={sectionRef} className="relative h-[150vh] bg-slate-950 overflow-visible">
 
             {/* Sticky Container */}
             <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden bg-slate-950">
@@ -103,7 +103,7 @@ export function PremiumStickyHero() {
                 </motion.div>
 
                 {/* Content */}
-                <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 z-10 flex items-center min-h-screen pb-24 md:pb-32">
+                <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 z-10 flex items-center min-h-screen">
                     <div className="w-full">
 
                         {/* Content Area */}
