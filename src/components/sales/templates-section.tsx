@@ -145,6 +145,38 @@ const templates = [
         previewUrl: '/previews/navy-precision-v1.html',
         tag: 'Autoridad',
         icon: <ShieldCheck className="w-5 h-5" />
+    },
+    {
+        title: 'Excelencia en Salud Dental',
+        description: 'Mínimalismo en azul marino y blanco. Diseñado para transmitir máxima confianza y profesionalismo.',
+        image: '/previews/excelencia-dental.jpg',
+        previewUrl: '/previews/excelencia-dental.html',
+        tag: 'Soberbio',
+        icon: <Shield className="w-5 h-5" />
+    },
+    {
+        title: 'Innovación y Precisión',
+        description: 'Enfoque técnico en grises y plateados. Ideal para implantología y cirugía avanzada.',
+        image: '/previews/innovacion-precision.jpg',
+        previewUrl: '/previews/innovacion-precision.html',
+        tag: 'Técnico',
+        icon: <Zap className="w-5 h-5" />
+    },
+    {
+        title: 'Tu Sonrisa, Obra Maestra',
+        description: 'Estilo nórdico en tonos arena y blanco hueso. Una experiencia dental serena y exclusiva.',
+        image: '/previews/sonrisa-maestra.jpg',
+        previewUrl: '/previews/sonrisa-maestra.html',
+        tag: 'Nórdico',
+        icon: <Eye className="w-5 h-5" />
+    },
+    {
+        title: 'Soluciones Ejecutivas',
+        description: 'Autoridad en esmeralda oscuro y pizarra. Optimizado para el profesional de hoy.',
+        image: '/previews/soluciones-ejecutivas.jpg',
+        previewUrl: '/previews/soluciones-ejecutivas.html',
+        tag: 'Ejecutivo',
+        icon: <Zap className="w-5 h-5" />
     }
 ]
 

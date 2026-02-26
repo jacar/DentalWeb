@@ -1,0 +1,395 @@
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0f49bd",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">dentistry</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight">Excelencia <span class="text-primary">Dental</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="#inicio">Inicio</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="#servicios">Servicios</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="#equipo">Especialistas</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="#contacto">Contacto</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md">
+            Agendar Cita
+          </button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden" id="inicio">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">verified</span>
+            Líderes en Odontología de Lujo
+          </div>
+<h1 class="text-5xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-[1.1]">
+            Redefiniendo la <br/><span class="text-primary italic">Estética Dental</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+            Donde la innovación tecnológica y el cuidado personalizado se unen para transformar su sonrisa con los más altos estándares de calidad internacional.
+          </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg text-base font-bold transition-all shadow-lg">
+              Solicitar Consulta Privada
+            </button>
+<button class="border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white px-8 py-4 rounded-lg text-base font-bold transition-all">
+              Ver Tratamientos
+            </button>
+</div>
+<div class="flex items-center gap-6 pt-4">
+<div class="flex -space-x-3">
+<img class="size-10 rounded-full border-2 border-white dark:border-background-dark object-cover" data-alt="Close up of a professional dentist face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIotOobx9tUTmsZMMq2Rd6VMKg3DCLcNylnOmAfvWLJWQHbO7kBA4LouADgL784PY2QxUC7N6zhvpfED1zoqnSpYD9DfIaSFVXaZjJer1M6yigt9YeM9-pddaFBeJF1w3-LU6k7ls9rXY1Jf-SVUpeIizvV3g_kMPr8zsCetSwkpTKCJ2Ey9sF7eCJ9TkqF0ZVyHwS2nK74rVoOLvhAAJ91otBxSwHaKuoXxwTRGfsvxOutaudzxyM7IlzFvxZbOTx1s2MSRXuIi4"/>
+<img class="size-10 rounded-full border-2 border-white dark:border-background-dark object-cover" data-alt="Satisfied patient smiling after dental treatment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk7wO6KU0zc9qR_Ku9TywjgTLHW-enDYPwKhMW2rWXblWmGfJGk7wJtVV1ciGYP7cKpwRzQkL2mCieUMQl_gCfsslbTHub-uAo3hOVJX6sIdjpFfjCH4eVWBf_Xp6ps35KmLJzIGsIktRlNAMTNFR4qOJq6Zd-d-Qly47S-JWXFCjqBcdNdDEvgh6HaJUilvlEAVtyrFn4Nx1G19qH9bfrb01cUGPZemDoAwdgklQxXxSi_y1ebrmNEY77z5izdFrltJnZhK08yPA"/>
+<img class="size-10 rounded-full border-2 border-white dark:border-background-dark object-cover" data-alt="High-end dental equipment in modern clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZruw1-jI338Of8IqpjML2kTi7gdgJNqv0g_0gLXZksdLyVI0HyejIX5drgKYPQPaTmStNqld4tAbWMaF9o5MzmQU9rklU5IhGxl20t6qW5ucatSNYe7zVFLFvkCm5Kt-nkvwI_7t-tsOTq22OHvJTPMvjZeaKzoBRYpTUZFOmtXaKQUEGks8wnYyiw8MI0n9cXXF9kTYJaBd1dMU5pcV_KdEFQLEQxxG1RY3YsGsbGyzKmZxw6_25sYY9s-34lvDz-k1Et7rPDlk"/>
+</div>
+<p class="text-sm text-slate-500"><span class="font-bold text-slate-900 dark:text-white">+2,000</span> Pacientes satisfechos</p>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-[600px] object-cover" data-alt="Modern high-end luxury dental clinic interior with minimal decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfi7Lm2iE6XYiQF6j1YhN67rcWuom-sG5NlG0VyLhnAkarcOZYTqE4k-Rea8WuKWHttVbyqSE_PlgoKS37CHQron_sa3gKnGB0xT3QasOcqs3GKU8BK2nea0LsmEJDYo2buo5e11iEEqiZ51C-UDxTJSNU9Z5q_s-ZKNUCsuOyeN97ofkxYSKp5ivHm8Gdyi-c45fxTBU-Gns3Yd6forI2_EjzvEB21j8IO7G4zSP1EJa6aCs_7_dsjeh1Q3LTGQd_BPpFmoikMuE"/>
+<div class="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md p-6 rounded-xl border border-white/20">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Excelencia Garantizada</h4>
+<p class="text-xs text-slate-500">Protocolos de bioseguridad de última generación.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="bg-slate-50 dark:bg-slate-900/50 py-24" id="servicios">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-3xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">Nuestros Servicios Exclusivos</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-slate-600 dark:text-slate-400">Ofrecemos soluciones dentales de vanguardia utilizando la tecnología más avanzada para resultados naturales y duraderos.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service Card 1 -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="size-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">colors_spark</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Estética Dental</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Carillas de porcelana y diseño de sonrisa digital personalizado para una armonía facial perfecta.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="size-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">align_horizontal_center</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Ortodoncia Invisible</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Alineadores transparentes Invisalign para corregir su posición dental de forma discreta y cómoda.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="size-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Implantes Avanzados</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Restauración funcional y estética permanente con tecnología de carga inmediata en un solo día.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="size-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">stethoscope</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Cirugía Oral</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Intervenciones mínimamente invasivas con sedación consciente para una experiencia libre de estrés.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Medical Team Section -->
+<section class="py-24" id="equipo">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">Expertos en su Sonrisa</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Nuestro equipo está conformado por especialistas certificados internacionalmente, dedicados a brindar una atención humana y técnica de excelencia.</p>
+</div>
+<button class="flex items-center gap-2 font-bold text-primary group">
+            Ver todo el equipo <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Doctor 1 -->
+<div class="group">
+<div class="relative overflow-hidden rounded-2xl mb-6">
+<img class="w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" data-alt="Professional male dentist smiling in clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD__IZ9_BhNZvzuqcOo7Qv1Kftjuvj2hexE_9JL4aPTNqI44L97WfmE0n-U-wayl6a4ob_oF54ObqXUrUWYE2x2Vv5duL8u3lFMkrLlHWErnKLTglRqHUb18puDNgPj4CSKYLPL1UQYplJ5vu5zRcrHZ27bSEWWx8a0DDvPDEKkR2TyR2YnLALLC0SDFBpYTXG4i7K3VSJOZDzREH8VD11rgzYpJUTdZZIMr3820vB4C4MraRfxqqN3T8j7iCJ8UKpTp983oJM8egg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="text-2xl font-bold text-slate-900 dark:text-white">Dr. Alejandro Ruiz</h4>
+<p class="text-primary font-medium mb-2">Director Médico - Especialista en Implantología</p>
+<p class="text-sm text-slate-500">Ph.D. en Odontología Restauradora por la Universidad de Madrid.</p>
+</div>
+<!-- Doctor 2 -->
+<div class="group">
+<div class="relative overflow-hidden rounded-2xl mb-6">
+<img class="w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" data-alt="Professional female dentist looking confident in clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANXdxt90TBNn8ueG5KybYd05s2f4-MnRzFZEiHwpOx-gBVN7bGm6pSdYv6OQRCP1AaxYv7O9xLbkW3NsCZJ-y_nfab3-26f-RH-r78Ui2hwzDETZjvsQCzt8ddBWMidC0blo9Fof0xUKEogIecjpz1c0GkSb-_t5X3yNhS0s1pfj_H9TzKUwqE4ADe01lsz473fxK36vM2bNkuvcCgo7UhrUZzJYW5FMfywiWA02Gufp9nvKfmq7f3MV3NezvMtBIVSlp28tdHIDE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="text-2xl font-bold text-slate-900 dark:text-white">Dra. Elena Martínez</h4>
+<p class="text-primary font-medium mb-2">Especialista en Ortodoncia Invisible</p>
+<p class="text-sm text-slate-500">Certificación Gold Invisalign con más de 10 años de experiencia.</p>
+</div>
+<!-- Doctor 3 -->
+<div class="group">
+<div class="relative overflow-hidden rounded-2xl mb-6">
+<img class="w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" data-alt="Young female dentist smiling in modern dental office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8EAKYukZ5ROQ3pfVWRGl-Ey0ntzmnQ-x-c25X7jxX2o9kRzpZWnfvV_RkpsRFgG70uANH5P7ML8dl_0e3zoU8hpCSoUZ4z4xpviq3kcRXsn5uhLl3lWw--gv8mikSoUPsCDjNxcYW_vAZQsOUyBpKe1y5XiKPQXZ1SRpOSH4jyS4ZOuKwSl5_0SdhvY08kUmg-fErxWcCt7n407rZM0qhSMgjtJzYYpNHaXPXkzsulk10RsYuy6o9I0gEQY599dbkOJxNuZfmf5s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="text-2xl font-bold text-slate-900 dark:text-white">Dra. Sofía Valencia</h4>
+<p class="text-primary font-medium mb-2">Especialista en Estética y Carillas</p>
+<p class="text-sm text-slate-500">Experta en diseño de sonrisa digital y rehabilitación mínimamente invasiva.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-primary py-24 text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 p-20 opacity-10">
+<span class="material-symbols-outlined text-[300px]">format_quote</span>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+<div class="flex flex-col items-center text-center mb-16">
+<h2 class="text-4xl lg:text-5xl font-bold mb-6">Lo que dicen nuestros pacientes</h2>
+<div class="w-20 h-1 bg-white/30 mb-6"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic">
+<div class="flex gap-1 text-yellow-400 mb-6">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-lg mb-8">"La atención es de otro nivel. Desde que entras a la clínica sientes que estás en las mejores manos. Mi diseño de sonrisa cambió mi confianza por completo."</p>
+<div class="flex items-center gap-4 non-italic">
+<div class="size-12 rounded-full bg-white/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling executive woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVWksTV1cCBri2_pTZphIknWzwywsAPESJi9iEsccvwmcxKBilPtN8rrwFJlEG-fIucOYwcat2mffwIpzNfwi01pI49e2ywJS5gRQFIWH2lfa7i0hG35_o4cp5_Nd1bzKu12Cm8BcdlOw4fth9ljw7rfZrwWTNJiIe7zLMhgwCS1YMSXTpd452JIC2wT1QRLhx4WCRnc1TrngA-SNRpvlfyOY6FVkNH4lH-fhX2IvyJVHRHjg5joVHvB2tiN_nMFTz6kTxk8Wj9Qg"/>
+</div>
+<div>
+<p class="font-bold">Patricia Mendoza</p>
+<p class="text-xs text-white/60">Empresaria</p>
+</div>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic">
+<div class="flex gap-1 text-yellow-400 mb-6">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-lg mb-8">"Tecnología impresionante. Me realizaron implantes de carga inmediata y pude volver a mi vida normal en menos de 24 horas. Profesionales excepcionales."</p>
+<div class="flex items-center gap-4 non-italic">
+<div class="size-12 rounded-full bg-white/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a confident professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoqDBmoS6FZ8xykSIXfpi0VU5i_vUPoaVeke3dVEbT5562ILLBN9vPDygD7YqZcoDjndoyc8rA49F-bpa91Rje_Ucrn-2WSHryNUt3rfbHwWQ8cy7QkOsYjlulAvvmNyTISbM99DperBbLKI6VUdwqtQw12-H2ARFiDigY_Kd76lehyUQwEWK03IL9L9lHugZH_b62ftisXnifZLlfr-iaeF2hAE_pAVsOeOUXNkfbACbw0GxrefHb4awLO3vhfEN16EHvo4A5NUA"/>
+</div>
+<div>
+<p class="font-bold">Roberto G. del Real</p>
+<p class="text-xs text-white/60">Arquitecto</p>
+</div>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic">
+<div class="flex gap-1 text-yellow-400 mb-6">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-lg mb-8">"Como alguien que temía al dentista, la sedación consciente fue la solución perfecta. Todo el equipo fue extremadamente amable y paciente conmigo."</p>
+<div class="flex items-center gap-4 non-italic">
+<div class="size-12 rounded-full bg-white/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a relaxed young woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPSPtJhWnaywCathWI7eXS36zMUW1TwaG1oNThP3Wk4Aiaz0KZ9Bpzn46ELktsFmFrjlpPrEsa-rQszKdEhW-7mGYaphoODJ9J7j4mNILIhMHj6KPg-iLR8qYyKnAkilD-hoxKLLEm5gxED9z865mPHzkZulYRDAHMZBb2G7gBnjEUsF46rjedjESOEQgoPOjFX13VdsuHcF3GiW6pNT-6g8QVb1kCjMyLu69iY-D3DJepAs00KYqhaRFOMRDonlcQHOvfKWtKRBM"/>
+</div>
+<div>
+<p class="font-bold">Lucía Ferrán</p>
+<p class="text-xs text-white/60">Diseñadora de Modas</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-24" id="contacto">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="grid lg:grid-cols-2 gap-16 items-start">
+<div>
+<h2 class="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-8">Comience su transformación</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg mb-10 leading-relaxed">Estamos listos para atenderle en nuestras instalaciones de lujo. Reserve su cita de valoración y reciba un plan de tratamiento personalizado.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-bold">Ubicación</h4>
+<p class="text-slate-500">Av. de la Excelencia 450, Distrito Financiero, Madrid, ES</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h4 class="font-bold">Teléfono</h4>
+<p class="text-slate-500">+34 912 345 678</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h4 class="font-bold">Email</h4>
+<p class="text-slate-500">info@excelenciadental.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800">
+<form class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-medium">Nombre</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-transparent focus:border-primary focus:ring-primary" placeholder="Ej. Juan" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium">Apellido</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-transparent focus:border-primary focus:ring-primary" placeholder="Ej. Pérez" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium">Correo Electrónico</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-transparent focus:border-primary focus:ring-primary" placeholder="juan.perez@email.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium">Servicio de Interés</label>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-transparent focus:border-primary focus:ring-primary">
+<option>Estética Dental</option>
+<option>Ortodoncia Invisible</option>
+<option>Implantes</option>
+<option>Otros</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium">Mensaje</label>
+<textarea class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-transparent focus:border-primary focus:ring-primary" placeholder="¿Cómo podemos ayudarle?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-lg font-bold transition-all shadow-md" type="submit">
+                Enviar Solicitud
+              </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="grid md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-2">
+<div class="flex items-center gap-3 text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">dentistry</span>
+<h2 class="text-white text-xl font-bold tracking-tight">Excelencia Dental</h2>
+</div>
+<p class="text-slate-400 max-w-sm mb-6 leading-relaxed">Comprometidos con la salud y estética dental de nuestros pacientes a través de la innovación constante y el trato humano de excelencia.</p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">groups</span>
+</a>
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-lg">Navegación</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Inicio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Nuestros Servicios</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Equipo Médico</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog de Salud</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-lg">Horario</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li class="flex justify-between"><span>Lunes - Viernes</span> <span>09:00 - 20:00</span></li>
+<li class="flex justify-between"><span>Sábados</span> <span>10:00 - 14:00</span></li>
+<li class="flex justify-between"><span>Domingos</span> <span class="text-primary font-bold italic underline">Cerrado</span></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+<p>© 2024 Clínica Excelencia Dental. Todos los derechos reservados.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Política de Privacidad</a>
+<a class="hover:text-white transition-colors" href="#">Aviso Legal</a>
+<a class="hover:text-white transition-colors" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

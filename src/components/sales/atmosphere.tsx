@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export function Atmosphere() {
     return (
-        <div className="fixed inset-0 pointer-events-none z-[100]">
+        <div className="fixed inset-0 pointer-events-none z-0">
             {/* Film Grain Texture */}
             <div
                 className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://res.cloudinary.com/dzv9rqg49/image/upload/v1642675402/grain_m4f9w4.png')] bg-repeat"

@@ -18,6 +18,7 @@ import {
   MobileAnimation,
   BotSection,
   ScrollImageAnimation,
+  NextStepsSection,
 } from '@/components/sales'
 
 export default function Home() {
@@ -114,6 +115,9 @@ export default function Home() {
 
       {/* Vertical Transition: Image Scroll Animation */}
       <ScrollImageAnimation />
+
+      {/* Next Steps: How to proceed */}
+      <NextStepsSection />
 
       {/* Final Vertical Section: Contact */}
       <section id="contacto">

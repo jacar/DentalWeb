@@ -56,14 +56,14 @@ export function PremiumStickyHero() {
     }, [smoothProgress])
 
     // Para desvanecer el contenido de texto al final del scroll de la sección hero
-    const contentOpacity = useTransform(scrollYProgress, [0.8, 1], [1, 0])
-    const contentScale = useTransform(scrollYProgress, [0.8, 1], [1, 0.95])
-    const videoOpacity = useTransform(scrollYProgress, [0.9, 1], [1, 0.5])
+    const contentOpacity = useTransform(scrollYProgress, [0.9, 1], [1, 0])
+    const contentScale = useTransform(scrollYProgress, [0.9, 1], [1, 0.95])
+    const videoOpacity = useTransform(scrollYProgress, [0.92, 1], [1, 0.5])
     const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
 
-    // Animación de desplazamiento horizontal para asegurar la lectura completa hasta "DENTAL"
-    const xMovement = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], ["0%", "0%", "-70%", "-75%"])
-    const letterSpacing = useTransform(scrollYProgress, [0, 0.5], ["0em", "0.15em"])
+    // Animación de desplazamiento horizontal ajustada para asegurar la lectura completa hasta "DENTAL"
+    const xMovement = useTransform(scrollYProgress, [0, 0.1, 0.85, 0.95], ["0%", "0%", "-85%", "-90%"])
+    const letterSpacing = useTransform(scrollYProgress, [0, 0.5], ["-0.02em", "0.05em"])
 
     return (
         <section ref={sectionRef} className="relative h-[300vh] bg-slate-950 overflow-visible">
@@ -85,51 +85,62 @@ export function PremiumStickyHero() {
                         onLoadedData={() => setIsVideoLoaded(true)}
                         className="w-full h-full object-cover"
                     />
-                    {/* Cinematic Darkness Overlays */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/40 to-transparent z-[1]" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-transparent to-slate-950/80 z-[1]" />
+                    {/* Brighter Cinematic Overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent z-[1]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-900/60 z-[1]" />
+
+                    {/* --- EFECTO CLIPPED H1: DISEÑAMOS TU IMPERIO DENTAL (FULL WIDTH) --- */}
+                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 overflow-hidden z-[5] pointer-events-none">
+                        <div className="relative w-full h-[30vh] md:h-[50vh] flex items-center">
+                            <motion.h1
+                                style={{ x: xMovement, letterSpacing }}
+                                className="text-[22vw] md:text-[25vw] font-black text-white/10 dark:text-white/5 uppercase whitespace-nowrap leading-none select-none outline-text"
+                            >
+                                DISEÑAMOS TU IMPERIO DENTAL
+                            </motion.h1>
+                        </div>
+                    </div>
                 </motion.div>
 
                 {/* Content */}
-                <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 z-10 flex justify-center">
-                    <div className="max-w-4xl w-full">
+                <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 z-10 flex items-center min-h-screen">
+                    <div className="w-full">
 
-                        {/* Left Content (Premium Text & CTAs) */}
+                        {/* Content Area */}
                         <motion.div
                             style={{ opacity: contentOpacity, scale: contentScale }}
-                            className="text-center lg:text-left"
+                            className="text-center lg:text-left pt-20"
                         >
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border border-teal-100/50 text-teal-600 font-semibold text-xs mb-8 tracking-wider uppercase"
+                                className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-teal-500/10 backdrop-blur-md border border-teal-400/30 text-teal-400 font-semibold text-xs mb-8 tracking-wider uppercase"
                             >
                                 <Sparkles className="w-3.5 h-3.5 fill-current" />
                                 <span>Excelencia Visual y Conversión</span>
                             </motion.div>
 
-                            {/* --- EFECTO CLIPPED H1: DISEÑAMOS TU IMPERIO DENTAL --- */}
-                            <div className="relative w-full overflow-hidden mb-8 md:mb-12">
-                                <div className="relative w-full h-[18vh] md:h-[40vh] flex items-center justify-center">
-                                    {/* El título que se mueve (sin fondo, sobre el video) */}
-                                    <motion.h1
-                                        style={{ x: xMovement, letterSpacing }}
-                                        className="absolute top-1/2 -translate-y-1/2 left-0 text-[15vw] md:text-[14vw] font-black text-teal-400 uppercase whitespace-nowrap leading-none z-20 select-none px-4 md:px-0"
-                                    >
-                                        DISEÑAMOS TU IMPERIO DENTAL
-                                    </motion.h1>
-
-                                </div>
+                            <div className="relative mb-8 md:mb-12">
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    className="text-5xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tighter"
+                                >
+                                    DISEÑAMOS TU <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-400 animate-gradient-x">
+                                        IMPERIO DENTAL
+                                    </span>
+                                </motion.h2>
                             </div>
 
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-lg md:text-2xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-snug font-medium px-4 md:px-0"
+                                className="text-lg md:text-2xl text-slate-200 mb-8 max-w-2xl mx-auto lg:mx-0 leading-snug font-medium"
                             >
                                 Tecnología visual de vanguardia para clínicas de élite. <br className="hidden md:block" />
-                                <span className="font-bold text-teal-400">Eleva tu marca con el poder del 3D.</span>
+                                <span className="font-bold text-teal-300">Eleva tu marca con el poder del 3D y diseño premium.</span>
                             </motion.p>
 
                             <motion.div

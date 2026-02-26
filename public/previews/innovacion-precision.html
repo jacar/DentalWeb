@@ -1,0 +1,332 @@
+<html><head><meta charset="utf-8"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#148fb8",
+          "background-light": "#f6f7f8",
+          "background-dark": "#111d21",
+        },
+        fontFamily: {
+          "display": ["Space Grotesk", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+</head><body class="dark bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="mx-auto flex max-w-7xl items-center justify-between">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">biotech</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">CLÍNICA DENTAL <span class="text-primary font-light">AVANZADA</span></h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Inicio</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Especialidades</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Tecnología</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Casos</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Contacto</a>
+</nav>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary text-white text-sm font-bold transition-all hover:brightness-110 active:scale-95">
+            Solicitar Evaluación Clínica
+          </button>
+</div>
+<button class="md:hidden text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative px-6 md:px-20 pt-10 pb-20">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="text-xs font-bold uppercase tracking-widest">Excelencia Quirúrgica</span>
+</div>
+<h1 class="text-slate-900 dark:text-white text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
+                Innovación y Precisión <span class="text-primary">Quirúrgica</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed max-w-xl">
+                Especialistas en implantología dental de alta gama. Resultados duraderos con tecnología de vanguardia y rigor científico de nivel hospitalario.
+              </p>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-14 px-6 bg-primary text-white text-base font-bold transition-all hover:shadow-lg hover:shadow-primary/20">
+                  Agendar Cita de Especialista
+                </button>
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-14 px-6 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-base font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                  Ver Tecnología 3D
+                </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-200 dark:bg-slate-900 shadow-2xl" data-alt="High-tech dental implant precision surgery equipment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAoDkjOT2VSL374fo3qwlj9dYD3I8QMzpFwuIr5IMgin-gt3x2Rysrk8YDfyLy7GKtYC1-ySNlDBEHoKa6H9J528cCRt9ssP8Dj2RSTjAZ4PDjn8gX3c6VAurKZTZIfg0IHvoS1iZToObihKkHMlJtty47tVFT29SqWxizy6G9Z27eHaSVylKUsgYVY0g4P0v6XfTUGPLp-h_toRsUJ00w7H8GoikuzqCcRgdOiH7ucxL2pmQulSbDKRMLpz2i_1epbYwmTz_sXBUE'); background-size: cover; background-position: center;">
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xl hidden md:block">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">99.8%</p>
+<p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Éxito Clínico</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="px-6 md:px-20 py-12">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="flex flex-col gap-2 rounded-xl p-8 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+<span class="material-symbols-outlined text-primary mb-2">medical_services</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Cirugías Realizadas</p>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">+5,000</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-8 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+<span class="material-symbols-outlined text-primary mb-2">history_edu</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Años de Trayectoria</p>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">20+</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-8 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+<span class="material-symbols-outlined text-primary mb-2">view_in_ar</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Tecnología Digital</p>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">100%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-8 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+<span class="material-symbols-outlined text-primary mb-2">groups</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pacientes Satisfechos</p>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">99%</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Nuestra Tecnología -->
+<section class="px-6 md:px-20 py-24 bg-slate-100 dark:bg-slate-900/30">
+<div class="mx-auto max-w-7xl">
+<div class="flex flex-col gap-4 mb-16 max-w-2xl">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Innovación Médica</h2>
+<h3 class="text-slate-900 dark:text-white text-4xl font-bold tracking-tight">Vanguardia en Implantología Digital</h3>
+<p class="text-slate-600 dark:text-slate-400 text-lg">
+              Utilizamos los sistemas de diagnóstico y cirugía más avanzados del mundo para garantizar una precisión absoluta en cada intervención.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group flex flex-col gap-6 p-4 rounded-2xl transition-all hover:bg-white dark:hover:bg-slate-800/50 border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+<div class="w-full aspect-video bg-slate-200 dark:bg-slate-800 rounded-lg overflow-hidden" data-alt="Digital intraoral 3D scanner device in use" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCt65tdQzzwnoW0S3B57W3rx3FUiA87l_cOfDCBe44HeL0dSa7Dz261KHzw9Y934HnUkxw69P8J_TKWaFxfwf_JiOe3DcFjGmZphHEn0M7GlWRMkoBilYHZe8_GkxovyVvWj262xR7O9KgWMPi-_Fl94rD8Zaip0pN0UBbSu1OxY8c36VQO03aNjc_vUJqwhOqaxcLalWTjcProJsNQaV-0RxDrsh2Sj-VGSY43T-yQvf3U-hfikFXQJXbzXr4e_ULTpbk5Lm8zEb4'); background-size: cover;"></div>
+<div>
+<h4 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Escáner Intraoral 3D</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Mapas digitales precisos de la anatomía oral en tiempo real, eliminando la necesidad de moldes tradicionales incómodos.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-6 p-4 rounded-2xl transition-all hover:bg-white dark:hover:bg-slate-800/50 border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+<div class="w-full aspect-video bg-slate-200 dark:bg-slate-800 rounded-lg overflow-hidden" data-alt="Guided surgery surgical navigation software screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVThhdu18zLM5kyj9W9YItnZ_XRLAp0UZK56yH8dkFXEOrzqGqEGy8vdQ75_IGCioiay4oy5tcdF2N_LsGvsfobmEK2stcqzKl9OS7GlEw6ZLZqxwl_aWIAb0BSV0z4olDRvRuSP_dJbJrbzEq2Wy-l1AokY7wYEkv2U5Nl_QqUmcHOYjxuc_rVmH3gIvLXBwkf-Ym1ns6l_yrvLkEm5QbS5imF4Rfj0Cpp-VI87SWs_P4UvTKuVNb2J9BMRZzywCsi9uAgNBrNp8'); background-size: cover;"></div>
+<div>
+<h4 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Cirugía Guiada por Computadora</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Planificación virtual milimétrica que permite realizar incisiones mínimamente invasivas con tiempos de recuperación récord.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-6 p-4 rounded-2xl transition-all hover:bg-white dark:hover:bg-slate-800/50 border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+<div class="w-full aspect-video bg-slate-200 dark:bg-slate-800 rounded-lg overflow-hidden" data-alt="Close up of titanium dental implants and components" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpdX-5b0rIvTTr3on4vzhw5Nuo1OtQbsyWPLvutgTT0sjGW578wE42r_TNniWkwZkJxL4lCqn217Iv576bHDFk2fpQDflOpz8lG3IQnXy69fxGdTfah8rdLD53Bph9nICRZRnY_v65VTnGi3g0xwdW3pMqdgcMv2F0b3BJaihXTAGbDM-vCu5bYS3O-T9SgGAVogKaVoUL3jQQvOhfNPyHlVLIrrbrv24aEUNKTb68IHcC0E-SodI9zv7n-VD99uQl3XNf3zqPaHc'); background-size: cover;"></div>
+<div>
+<h4 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Biomateriales Premium</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Implantes de titanio grado médico y circonio con superficies bioactivas que aceleran la integración ósea.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Procedimientos -->
+<section class="px-6 md:px-20 py-24">
+<div class="mx-auto max-w-7xl">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+<div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+<div class="aspect-[4/5] bg-slate-300" data-alt="Doctor explaining a dental procedure to a patient using digital screens" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAid3OXxRZMzI5m4AKJjUveZyyjqJ05lnPBNn8MqB4q93L4Q-YGK3Jfdlne7AOavRbZF7jJAqBeqwWu51_3nJKhniLV9GcJWcedw2rFvbeHQl31_UopKQV_rnJwbH2EoJf9dSMx8upr4J3nqHb5VMX01PesoEVQZuFSmEcq3PmRvQi9MOTuFK6qjYwukKxKZLF-3BllVNzAP_Y48SceGOmN-W6KTW_EQp3p1Kzn-TaFpw7x99-f1mBLehK9nCFMfuatwWZVAZSBdY'); background-size: cover; background-position: center;"></div>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-10">
+<div class="flex flex-col gap-4">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Procedimientos</h2>
+<h3 class="text-slate-900 dark:text-white text-4xl font-bold">Excelencia en cada etapa del tratamiento</h3>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex gap-6 items-start">
+<div class="shrink-0 size-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white font-bold border border-slate-300 dark:border-slate-700">01</div>
+<div>
+<h5 class="text-slate-900 dark:text-white font-bold text-lg mb-2">Diagnóstico por Tomografía CBCT</h5>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Visualización 3D completa de la estructura ósea y nerviosa para una seguridad absoluta.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="shrink-0 size-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white font-bold border border-slate-300 dark:border-slate-700">02</div>
+<div>
+<h5 class="text-slate-900 dark:text-white font-bold text-lg mb-2">Diseño Digital de la Sonrisa</h5>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Planificamos la estética final antes de comenzar el proceso quirúrgico.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="shrink-0 size-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white font-bold border border-slate-300 dark:border-slate-700">03</div>
+<div>
+<h5 class="text-slate-900 dark:text-white font-bold text-lg mb-2">Carga Inmediata (Dientes en un día)</h5>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Protocolos avanzados que permiten colocar prótesis provisionales fijas el mismo día de la cirugía.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Casos de Éxito -->
+<section class="px-6 md:px-20 py-24 bg-slate-900 text-white">
+<div class="mx-auto max-w-7xl">
+<div class="text-center max-w-2xl mx-auto mb-20 flex flex-col gap-4">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Resultados</h2>
+<h3 class="text-4xl font-bold">Historias de Transformación</h3>
+<p class="text-slate-400">Casos clínicos reales documentados bajo estrictos protocolos de seguimiento.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700">
+<div class="grid grid-cols-2 gap-1 p-1">
+<div class="aspect-square bg-slate-700" data-alt="Before procedure dental smile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcK_prcKDiehgWHDyvL4CNEs838ZQG27kwgP5twEIrx5CXgTOWSU205AjGaw8VHTwUO4yCVBkileKZhGI4wgbQF3Bj1KP-WW8YtcFXXuVH34z31sJ0ksk1Z3WUW_TtwM6tHxsAfxghHxYrLmICTBabbLvKZ6js_Dm4caL_5Vh0bXLRWFHISnoe_uo3nRUacs0B84k3BLhxJ6UUIeCWI6YStjae1CMIhTeQn7cFBsbEcnbH59fLTPYNmWXCkm08zwNhcoX1KcojFKk'); background-size: cover;"></div>
+<div class="aspect-square bg-slate-700" data-alt="After procedure dental smile photo showing perfect results" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYlI5kyFP6Ykp4plZSIR1srf9iyqNv47a_tEbxXlDgwr62ia8dVunFvw5Fz3cAmYcq7OB0v-0Gi35-_A70fg14cB8tUYviHsH62gd2gNd_luj3YHTzmWq344u2ng7KxbfukiKxnM9YJU4udxMDV-kAneguga8jH-LZcEnibgMmgWPsfPbPezCNVj4WVq7s0e12TDeqGCVroCORDC-Xm8XmZjRYPYXUPC98g8Hnjk3L5lXuRpo21ET-dQQX-DaqcYeGsL9ILiXMwpw'); background-size: cover;"></div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Rehabilitación Completa</span>
+<span class="text-slate-500 text-xs">Paciente: 54 años</span>
+</div>
+<h5 class="font-bold text-xl text-white">Protocolo All-on-4</h5>
+<p class="text-slate-400 text-sm">Restauración total del arco superior con carga inmediata en tan solo 6 horas de procedimiento.</p>
+</div>
+</div>
+<div class="bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700">
+<div class="grid grid-cols-2 gap-1 p-1">
+<div class="aspect-square bg-slate-700" data-alt="Close up of a single missing tooth space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLD3AqWMQet7sfXrypj4_Oj3r4lwYw38R7FmFBed9_Z9bLbyf98lY4L9bWKNEXjmaeInuWTcWtUj0j2ohB2kk5gI6xxP9QjTNIXdf2SPh5uiFLi6hZa2cSC85xlGhrrUI53X7VTmBEqWWC696WxVWvSY4IBy4pzBdgr4t1PYEr0qDymd1TY_TfRwn94vglefGVlod0AfiDfc3Qk2TkYnbEbIBysQPfJx7hfZoxVZFWdnfu8U4WAA3AEo9sqKrWERqkoNRNOwMvgXw'); background-size: cover;"></div>
+<div class="aspect-square bg-slate-700" data-alt="Close up of a perfect ceramic dental implant crown" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtXk3eVn1moKxFwLLRVqN_aOwzVydkofGZWS3gJXvTZRsIU-jZwMXgy_JFDHS4NBd3uTjZQpYLvv9OwRtJ5WCoVoNv_29GVcBtvKc9Py9OdtcL73lGShOyeWIg80BSsgGoo2NPLUsjCC8TiJCIXZzCBJ0QaHskP41Blguxuj7xXlQ51rJUtyAsHyz1lejZKV9QRX8-4_zKprl-12_9T4f5qHL90jGOkoFNFqjWZmvbm_O70GKTrs_is0nFOwlcnDwuO5Nys7x74rU'); background-size: cover;"></div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Estética Anterior</span>
+<span class="text-slate-500 text-xs">Paciente: 29 años</span>
+</div>
+<h5 class="font-bold text-xl text-white">Implante Unitario</h5>
+<p class="text-slate-400 text-sm">Reposición de pieza central con corona de circonio personalizada mediante tecnología CAD/CAM.</p>
+</div>
+</div>
+<div class="bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700">
+<div class="grid grid-cols-2 gap-1 p-1">
+<div class="aspect-square bg-slate-700" data-alt="Oral scan before surgery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHd3yNRB16cfc5GWyqQkOIu8t-STj_SK8IA0ioqXVLgEmVGrKSv219N02Bj73oBN5rzdPqQiX4UpFNoLPHNTpnLqGT3wzQbr8VYj56rdcCLHpCHpj3zxeNTvvz0M_fx_64kzcxLohqR5fJkAd5LKjFc_EauxzbVGY0Hoysfgfu5qrrWz5UfR9BpMMdRGt7nk6Emi1uMJ-LkpJhsWi7JnvHegXQCdNhGX68mf9gpdWr0ok0tW-R21l78uDiieYSa3JZhV0UjZxpzFY'); background-size: cover;"></div>
+<div class="aspect-square bg-slate-700" data-alt="Oral scan showing perfectly placed implants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWRCx1qP00Usa32D-JLOMSK8oKMC-9ifBrC5MiI36kJWaoO210P2Yps7XOTZM5ECb5CwWiKhNfozJ4uCXgTvQ-NYf8gOc-DwVQDJgwJQyErpTZWvwQUxL9L-2s767LaltOHsI_KI5-QMyZ9PNTfHQWjm_jbMyuKtCx13o_sHjxeBFfKE0NIOCFOwa42nnjbzk81FZiStMgNXWvr0V8uC_xNfPJbnhdZXH4Pv8HgxTUl5OUw8a-gnyXod4_BKSF0SNBKde9_ORKjOw'); background-size: cover;"></div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Aumento Óseo</span>
+<span class="text-slate-500 text-xs">Paciente: 67 años</span>
+</div>
+<h5 class="font-bold text-xl text-white">Elevación de Seno</h5>
+<p class="text-slate-400 text-sm">Regeneración ósea guiada para permitir la colocación de implantes en zonas de baja densidad.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 md:px-20 py-24">
+<div class="mx-auto max-w-7xl">
+<div class="bg-primary rounded-3xl p-10 md:p-20 flex flex-col items-center text-center gap-8 relative overflow-hidden">
+<!-- Abstract background pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<h3 class="text-white text-3xl md:text-5xl font-bold max-w-3xl relative z-10 leading-tight">
+               Recupere su calidad de vida con precisión científica
+             </h3>
+<p class="text-white/80 text-lg md:text-xl max-w-2xl relative z-10">
+               Nuestra evaluación clínica incluye un escáner 3D inicial y un plan de tratamiento personalizado sin compromiso.
+             </p>
+<button class="relative z-10 flex min-w-[250px] cursor-pointer items-center justify-center rounded-xl h-16 px-8 bg-white text-primary text-lg font-bold transition-all hover:scale-105 active:scale-95 shadow-2xl">
+               Solicitar Evaluación Clínica Gratuita
+             </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="px-6 md:px-20 py-16 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<div class="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2 flex flex-col gap-6">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">biotech</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">CLÍNICA DENTAL AVANZADA</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-md leading-relaxed">
+            Líderes en implantología y rehabilitación oral compleja. Comprometidos con la excelencia clínica y el bienestar del paciente a través de la ciencia.
+          </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="size-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+</a>
+<a class="size-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="text-slate-900 dark:text-white font-bold text-sm uppercase tracking-widest">Navegación</h5>
+<nav class="flex flex-col gap-3">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Inicio</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Tratamientos</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Tecnología</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Casos de Éxito</a>
+</nav>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="text-slate-900 dark:text-white font-bold text-sm uppercase tracking-widest">Contacto</h5>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-base">location_on</span>
+<p>Calle Médica 123, Madrid</p>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-base">phone</span>
+<p>+34 900 123 456</p>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-base">mail</span>
+<p>info@clinicadental.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mx-auto max-w-7xl mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-xs">© 2024 Clínica Dental Avanzada. Todos los derechos reservados.</p>
+<div class="flex gap-8">
+<a class="text-slate-500 text-xs hover:text-primary" href="#">Aviso Legal</a>
+<a class="text-slate-500 text-xs hover:text-primary" href="#">Privacidad</a>
+<a class="text-slate-500 text-xs hover:text-primary" href="#">Cookies</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+```</body></html>
