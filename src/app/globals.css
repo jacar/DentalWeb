@@ -126,10 +126,15 @@
     scroll-behavior: smooth;
   }
 
+  html,
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/20;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    overflow-x: clip;
   }
 
   h1,
