@@ -13,6 +13,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0d9488",
+};
+
 export const metadata: Metadata = {
   title: "DentalWeb | Diseño Web de Élite para Odontólogos",
   description: "Transformamos clínicas dentales en marcas de prestigio. Páginas web premium con animaciones 3D, SEO local y conversión garantizada para especialistas dentales.",
@@ -25,9 +32,7 @@ export const metadata: Metadata = {
     "dental web design"
   ],
   authors: [{ name: "DentalWeb Premium" }],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   robots: "index, follow",
-  themeColor: "#0d9488",
   icons: {
     icon: "/logo.svg",
     apple: "/logo.svg",
