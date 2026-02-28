@@ -17,6 +17,7 @@ export * from './web-mockup'
 export * from './mobile-animation'
 export * from './bot-section'
 export * from './scroll-image-animation'
+export * from './floating-chatbot'
 
 // Premium Components
 export * from './premium/hero'

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { FloatingChatbot } from "@/components/sales";
 
 
 const geistSans = Geist({
@@ -76,7 +77,7 @@ export default function RootLayout({
         {children}
         <Toaster />
         <ScrollToTop />
-
+        <FloatingChatbot />
       </body>
     </html>
   );

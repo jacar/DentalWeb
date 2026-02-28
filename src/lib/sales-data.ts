@@ -10,6 +10,7 @@ export interface PricingPlan {
   id: string
   name: string
   price: number
+  priceUSD: number
   period: string
   description: string
   features: string[]
@@ -38,27 +39,27 @@ export const services: Service[] = [
   {
     id: 'landing-page',
     name: 'Landing Pages',
-    description: 'Paginas de aterrizaje disenadas para convertir visitantes en pacientes de tu clinica dental.',
+    description: 'Páginas de aterrizaje diseñadas para convertir visitantes en pacientes de tu clínica dental.',
     icon: 'Layout',
     features: [
-      'Diseno profesional y moderno',
-      '100% responsive para moviles',
+      'Diseño profesional y moderno',
+      '100% responsive para móviles',
       'Formulario de contacto',
-      'Boton WhatsApp integrado',
+      'Botón WhatsApp integrado',
       'Panel autoadministrable'
     ]
   },
   {
     id: 'sitio-web',
     name: 'Sitios Web Completos',
-    description: 'Sitios web con multiples paginas para mostrar todos tus servicios dentales.',
+    description: 'Sitios web con múltiples páginas para mostrar todos tus servicios dentales.',
     icon: 'Globe',
     features: [
-      'Multiples paginas incluidas',
-      'Galeria de tratamientos',
+      'Múltiples páginas incluidas',
+      'Galería de tratamientos',
       'Sistema de citas online',
       'Blog para pacientes',
-      'Panel de administracion'
+      'Panel de administración'
     ]
   },
   {
@@ -67,20 +68,20 @@ export const services: Service[] = [
     description: 'Vende productos dentales y gestiona reservas directamente desde tu web.',
     icon: 'ShoppingCart',
     features: [
-      'Catalogo de productos',
+      'Catálogo de productos',
       'Pasarela de pagos',
       'Sistema de inventario',
-      'Reservas automaticas',
-      'Facturacion digital'
+      'Reservas automáticas',
+      'Facturación digital'
     ]
   },
   {
     id: 'soporte',
-    name: 'Asesoria Incluida',
-    description: 'Te ensenamos a usar tu panel y te asesoramos por todo un ano.',
+    name: 'Asesoría Incluida',
+    description: 'Te enseñamos a usar tu panel y te asesoramos por todo un año.',
     icon: 'Headphones',
     features: [
-      'Capacitacion personalizada',
+      'Capacitación personalizada',
       'Videos tutoriales',
       'Soporte por WhatsApp',
       'Actualizaciones gratis',
@@ -92,20 +93,21 @@ export const services: Service[] = [
 export const pricingPlans: PricingPlan[] = [
   {
     id: 'basico',
-    name: 'Basico',
+    name: 'Básico',
     price: 400000,
+    priceUSD: 100,
     period: 'Un solo pago anual',
     description: 'Ideal para dentistas que quieren empezar a tener presencia online.',
     features: [
       'Landing page profesional',
-      'Dominio .com incluido 1 ano',
-      'Hosting incluido 1 ano',
+      'Dominio .com incluido 1 año',
+      'Hosting incluido 1 año',
       'Panel autoadministrable',
       'Formulario de contacto',
-      'Boton WhatsApp flotante',
+      'Botón WhatsApp flotante',
       'Certificado SSL de seguridad',
-      'Mantenimiento gratis 1 ano',
-      'Asesoria por 1 ano'
+      'Mantenimiento gratis 1 año',
+      'Asesoría por 1 año'
     ],
     highlighted: ['Dominio .com incluido', 'Hosting incluido', 'Mantenimiento gratis'],
     recommended: false,
@@ -115,51 +117,53 @@ export const pricingPlans: PricingPlan[] = [
     id: 'profesional',
     name: 'Profesional',
     price: 650000,
+    priceUSD: 165,
     period: 'Un solo pago anual',
-    description: 'Perfecto para clinicas que quieren destacar y conseguir mas pacientes.',
+    description: 'Perfecto para clínicas que quieren destacar y conseguir más pacientes.',
     features: [
-      'Sitio web hasta 5 paginas',
-      'Dominio .com incluido 1 ano',
-      'Hosting incluido 1 ano',
+      'Sitio web hasta 5 páginas',
+      'Dominio .com incluido 1 año',
+      'Hosting incluido 1 año',
       'Panel autoadministrable',
       'Sistema de citas online',
-      'Galeria de tratamientos',
+      'Galería de tratamientos',
       'Blog integrado',
       'SEO optimizado para Google',
       'Formulario de contacto',
-      'Boton WhatsApp flotante',
+      'Botón WhatsApp flotante',
       'Certificado SSL de seguridad',
-      'Mantenimiento gratis 1 ano',
-      'Asesoria por 1 ano'
+      'Mantenimiento gratis 1 año',
+      'Asesoría por 1 año'
     ],
-    highlighted: ['Sistema de citas online', 'SEO optimizado', 'Hasta 5 paginas'],
+    highlighted: ['Sistema de citas online', 'SEO optimizado', 'Hasta 5 páginas'],
     recommended: true,
-    buttonText: 'Mas Popular'
+    buttonText: 'Más Popular'
   },
   {
     id: 'premium',
     name: 'Premium',
     price: 1000000,
+    priceUSD: 250,
     period: 'Un solo pago anual',
-    description: 'Solucion completa para clinicas grandes que quieren dominar su mercado.',
+    description: 'Solución completa para clínicas grandes que quieren dominar su mercado.',
     features: [
-      'Sitio web paginas ilimitadas',
-      'Dominio .com incluido 1 ano',
-      'Hosting incluido 1 ano',
+      'Sitio web páginas ilimitadas',
+      'Dominio .com incluido 1 año',
+      'Hosting incluido 1 año',
       'Panel autoadministrable',
       'Tienda online integrada',
       'Sistema de reservas',
-      'Galeria de casos de exito',
+      'Galería de casos de éxito',
       'Blog completo',
       'SEO avanzado',
-      'Marketing digital basico',
+      'Marketing digital básico',
       'Pasarela de pagos',
-      'Facturacion automatica',
+      'Facturación automática',
       'Certificado SSL de seguridad',
-      'Mantenimiento gratis 1 ano',
-      'Asesoria por 1 ano'
+      'Mantenimiento gratis 1 año',
+      'Asesoría por 1 año'
     ],
-    highlighted: ['Tienda online', 'Paginas ilimitadas', 'Marketing digital'],
+    highlighted: ['Tienda online', 'Páginas ilimitadas', 'Marketing digital'],
     recommended: false,
     buttonText: 'Contactar'
   }
@@ -168,28 +172,28 @@ export const pricingPlans: PricingPlan[] = [
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Dr. Carlos Martinez',
+    name: 'Dr. Carlos Martínez',
     role: 'Director',
-    clinic: 'Clinica Dental Sonrisa',
-    content: 'Desde que tengo mi pagina web, mis citas han aumentado un 40%. Los pacientes me encuentran facilmente en Google y confian mas en mi trabajo. El panel es muy facil de usar.',
+    clinic: 'Clínica Dental Sonrisa',
+    content: 'Desde que tengo mi página web, mis citas han aumentado un 40%. Los pacientes me encuentran fácilmente en Google y confían más en mi trabajo. El panel es muy fácil de usar.',
     rating: 5,
     image: '/testimonials/dr-martinez.jpg'
   },
   {
     id: '2',
-    name: 'Dra. Maria Gonzalez',
+    name: 'Dra. María González',
     role: 'Ortodoncista',
     clinic: 'Ortodoncia Premium',
-    content: 'Excelente servicio y atencion personalizada. La pagina web quedo exactamente como la imagine. Mis pacientes pueden agendar citas facilmente y yo administro todo desde el panel.',
+    content: 'Excelente servicio y atención personalizada. La página web quedó exactamente como la imaginé. Mis pacientes pueden agendar citas fácilmente y yo administro todo desde el panel.',
     rating: 5,
     image: '/testimonials/dra-gonzalez.jpg'
   },
   {
     id: '3',
-    name: 'Dr. Roberto Sanchez',
+    name: 'Dr. Roberto Sánchez',
     role: 'Propietario',
     clinic: 'Dental Care Center',
-    content: 'Invertir en una pagina web fue la mejor decision para mi clinica. Ahora compito con clinicas mas grandes y atraigo pacientes de toda la ciudad. No necesito agencia, yo mismo la administro.',
+    content: 'Invertir en una página web fue la mejor decisión para mi clínica. Ahora compito con clínicas más grandes y atraigo pacientes de toda la ciudad. No necesito agencia, yo mismo la administro.',
     rating: 5,
     image: '/testimonials/dr-sanchez.jpg'
   }
@@ -198,32 +202,32 @@ export const testimonials: Testimonial[] = [
 export const faqs: FAQ[] = [
   {
     id: '1',
-    question: 'Que incluye el dominio y hosting?',
-    answer: 'Incluimos tu dominio .com por un ano y el hosting donde estara alojada tu pagina web. No tienes que preocuparte por nada tecnico, nosotros nos encargamos de todo.'
+    question: '¿Qué incluye el dominio y hosting?',
+    answer: 'Incluimos tu dominio .com por un año y el hosting donde estará alojada tu página web. No tienes que preocuparte por nada técnico, nosotros nos encargamos de todo.'
   },
   {
     id: '2',
-    question: 'Que significa que es autoadministrable?',
-    answer: 'Tu pagina web tiene un panel de control facil de usar. Puedes cambiar textos, imagenes, agregar servicios, publicar en el blog y gestionar reservas sin conocimientos tecnicos. No necesitas contratar una agencia.'
+    question: '¿Qué significa que es autoadministrable?',
+    answer: 'Tu página web tiene un panel de control fácil de usar. Puedes cambiar textos, imágenes, agregar servicios, publicar en el blog y gestionar reservas sin conocimientos técnicos. No necesitas contratar una agencia.'
   },
   {
     id: '3',
-    question: 'Como funciona el mantenimiento gratis?',
-    answer: 'Durante el primer ano, nosotros nos encargamos de las actualizaciones de seguridad, respaldos automaticos y cualquier correccion tecnica. Tu pagina siempre funcionara correctamente.'
+    question: '¿Cómo funciona el mantenimiento gratis?',
+    answer: 'Durante el primer año, nosotros nos encargamos de las actualizaciones de seguridad, respaldos automáticos y cualquier corrección técnica. Tu página siempre funcionará correctamente.'
   },
   {
     id: '4',
-    question: 'En que consiste la asesoria por un ano?',
-    answer: 'Te ensenamos a usar tu panel, creamos videos tutoriales para ti, y estaremos disponibles por WhatsApp para resolver cualquier duda. Tambien te damos tips para conseguir mas pacientes.'
+    question: '¿En qué consiste la asesoría por un año?',
+    answer: 'Te enseñamos a usar tu panel, creamos videos tutoriales para ti, y estaremos disponibles por WhatsApp para resolver cualquier duda. También te damos tips para conseguir más pacientes.'
   },
   {
     id: '5',
-    question: 'Puedo agregar mas paginas despues?',
-    answer: 'Si, desde tu panel puedes crear nuevas paginas facilmente. Si tienes el plan Basico y necesitas mas paginas, puedes actualizar al plan Profesional pagando la diferencia.'
+    question: '¿Puedo agregar más páginas después?',
+    answer: 'Sí, desde tu panel puedes crear nuevas páginas fácilmente. Si tienes el plan Básico y necesitas más páginas, puedes actualizar al plan Profesional pagando la diferencia.'
   },
   {
     id: '6',
-    question: 'Que pasa despues del primer ano?',
-    answer: 'Despues del primer ano, la renovacion del dominio y hosting tiene un costo muy bajo (aproximadamente $80.000 COP al ano). El mantenimiento continua siendo gratis para ti.'
+    question: '¿Qué pasa después del primer año?',
+    answer: 'Después del primer año, la renovación del dominio y hosting tiene un costo muy bajo (aproximadamente $80.000 COP al año). El mantenimiento continúa siendo gratis para ti.'
   }
 ]

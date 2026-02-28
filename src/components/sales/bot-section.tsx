@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bot, MessageCircle, Zap, Clock, CheckCircle, Users, ArrowRight, Send, Calendar, Star, Sparkles, PhoneCall } from 'lucide-react'
+import { Bot, MessageCircle, Zap, Clock, CheckCircle, Users, ArrowRight, Send, Calendar, Star, Sparkles, PhoneCall, Paperclip, FileText, X } from 'lucide-react'
 
 // ── Chat data / flows ────────────────────────────────────────────────────────
 
@@ -168,7 +168,7 @@ const FLOWS: Record<string, { text: string; replies?: QuickReply[] }[]> = {
 
 // ── Chatbot demo ─────────────────────────────────────────────────────────────
 
-function renderText(text: string) {
+export function renderText(text: string) {
     return text.split('\n').map((line, i) => {
         const parts = line.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/)
         return (
@@ -186,75 +186,198 @@ function renderText(text: string) {
     })
 }
 
-function ChatDemo() {
+export function ChatDemo() {
     const [messages, setMessages] = useState<Message[]>([])
-    const [currentReplies, setCurrentReplies] = useState<QuickReply[]>([])
     const [typing, setTyping] = useState(false)
     const [started, setStarted] = useState(false)
-    const bottomRef = useRef<HTMLDivElement>(null)
+    const [inputValue, setInputValue] = useState('')
+    const [showHumanPrompt, setShowHumanPrompt] = useState(false)
+    const [showSurvey, setShowSurvey] = useState(false)
+    const [surveyRating, setSurveyRating] = useState(0)
+    const [uploadedFiles, setUploadedFiles] = useState<{ name: string, type: string, data: string }[]>([])
     const messagesRef = useRef<HTMLDivElement>(null)
+    const fileInputRef = useRef<HTMLInputElement>(null)
 
-    // Scroll ONLY inside the chat box, never the page
     useEffect(() => {
         const el = messagesRef.current
         if (el) el.scrollTop = el.scrollHeight
     }, [messages, typing])
 
-    const addBotMessage = useCallback((text: string) =>
-        new Promise<void>((resolve) => {
-            if (!text) { resolve(); return }
-            setMessages((prev) => [
-                ...prev,
-                { id: Date.now() + Math.random(), from: 'bot' as const, text, time: now() },
-            ])
-            resolve()
-        })
-        , [])
+    const sendMessage = async (text: string) => {
+        if (!text.trim()) return
 
-    const runFlow = useCallback(async (key: string) => {
-        if (key === 'reset') {
-            setMessages([])
-            setCurrentReplies([])
-            setStarted(false)
-            return
-        }
-
-        const steps = FLOWS[key]
-        if (!steps) return
-
-        setCurrentReplies([])
+        const userMsg: Message = { id: Date.now(), from: 'user', text, time: now() }
+        setMessages(prev => [...prev, userMsg])
+        setInputValue('')
         setTyping(true)
 
-        for (let i = 0; i < steps.length; i++) {
-            const step = steps[i]
-            const isLast = i === steps.length - 1
-            await new Promise((r) => setTimeout(r, 800))
-            setTyping(false)
-            if (step.text) await addBotMessage(step.text)
-            if (step.replies && !isLast) {
-                setCurrentReplies(step.replies)
-                return
+        try {
+            const history = messages.map(m => ({
+                role: m.from === 'user' ? 'user' : 'assistant',
+                content: m.text
+            }))
+
+            const res = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    messages: [...history, { role: 'user', content: text }]
+                })
+            })
+
+            const data = await res.json()
+            const botText = data.choices?.[0]?.message?.content || 'Lo siento, tuve un problema procesando tu mensaje. ¿Puedes intentar de nuevo?'
+
+            setMessages(prev => [...prev, {
+                id: Date.now() + 1,
+                from: 'bot',
+                text: botText,
+                time: now()
+            }])
+
+            // Lógica para detectar si se sugiere hablar con un humano
+            if (botText.toLowerCase().includes('humano') || botText.toLowerCase().includes('asesor') || botText.toLowerCase().includes('whatsapp')) {
+                setShowHumanPrompt(true)
             }
-            if (!isLast) setTyping(true)
+        } catch (error) {
+            console.error('Error chat:', error)
+            setMessages(prev => [...prev, {
+                id: Date.now() + 1,
+                from: 'bot',
+                text: 'Lo siento, mi conexión está fallando. ¿Deseas hablar con un asesor humano ahora mismo?',
+                time: now()
+            }])
+            setShowHumanPrompt(true)
+        } finally {
+            setTyping(false)
+        }
+    }
+
+    const sendHistoryToEmail = async (currentMessages: Message[], rating?: number) => {
+        try {
+            const history = currentMessages.map(m => ({
+                role: m.from === 'user' ? 'user' : 'assistant',
+                content: m.text
+            }))
+
+            const res = await fetch('/api/chat/send-history', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    history,
+                    rating: rating || 0,
+                    attachments: uploadedFiles
+                })
+            })
+
+            const data = await res.json()
+            if (!res.ok) throw new Error(data.details || data.error)
+
+            console.log('✅ Historial y archivos enviados por email')
+            setUploadedFiles([]) // Limpiar archivos tras envío exitoso
+        } catch (error) {
+            console.error('❌ Error enviando historial:', error)
+        }
+    }
+
+    const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const files = e.target.files
+        if (!files) return
+
+        const newFiles: { name: string, type: string, data: string }[] = []
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i]
+
+            // Validar peso (5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                alert(`El archivo ${file.name} supera los 5MB permitidos.`)
+                continue
+            }
+
+            // Validar tipo
+            if (!file.type.startsWith('image/') && file.type !== 'application/pdf') {
+                alert(`El archivo ${file.name} no es una imagen o PDF válido.`)
+                continue
+            }
+
+            // Convertir a base64
+            const reader = new FileReader()
+            const base64Promise = new Promise<string>((resolve) => {
+                reader.onload = () => resolve(reader.result as string)
+                reader.readAsDataURL(file)
+            })
+
+            const base64Data = await base64Promise
+            newFiles.push({
+                name: file.name,
+                type: file.type,
+                data: base64Data
+            })
         }
 
-        const lastStep = steps[steps.length - 1]
-        setCurrentReplies(lastStep.replies || [])
-        setTyping(false)
-    }, [addBotMessage])
+        setUploadedFiles(prev => [...prev, ...newFiles])
+        if (fileInputRef.current) fileInputRef.current.value = ''
+    }
 
-    const handleStart = useCallback(() => {
+    const removeFile = (index: number) => {
+        setUploadedFiles(prev => prev.filter((_, i) => i !== index))
+    }
+
+    const handleHumanAction = async (accept: boolean) => {
+        setShowHumanPrompt(false)
+        if (accept) {
+            await sendHistoryToEmail(messages) // Pasar mensajes
+            window.open(`https://wa.me/573052891719?text=${encodeURIComponent('Hola! Necesito hablar con un asesor humano sobre los servicios de DentalWeb.')}`, '_blank')
+
+            setMessages(prev => [...prev, {
+                id: Date.now(),
+                from: 'bot',
+                text: '¡Excelente! Te he redirigido a nuestro WhatsApp. Para mejorar, ¿podrías calificar mi atención brevemente?',
+                time: now()
+            }])
+            setShowSurvey(true)
+        } else {
+            setMessages(prev => [...prev, {
+                id: Date.now(),
+                from: 'bot',
+                text: 'Entendido. Seguimos por aquí. ¿En qué más puedo ayudarte con la web de tu clínica?',
+                time: now()
+            }])
+        }
+    }
+
+    const handleSurveySubmit = async (rating: number) => {
+        setSurveyRating(rating)
+        await sendHistoryToEmail(messages, rating) // Pasar mensajes y calificación
+        setShowSurvey(false)
+        setMessages(prev => [...prev, {
+            id: Date.now(),
+            from: 'bot',
+            text: `¡Gracias por tu calificación de ${rating} estrellas! 🌟 Un asesor se pondrá en contacto contigo pronto.`,
+            time: now()
+        }])
+    }
+
+    const handleFinalize = async () => {
+        await sendHistoryToEmail(messages) // Pasar mensajes
+        setShowSurvey(true)
+        setMessages(prev => [...prev, {
+            id: Date.now(),
+            from: 'bot',
+            text: 'Has finalizado la sesión. He enviado el resumen de nuestra conversación a nuestro equipo. ¿Podrías calificar mi atención?',
+            time: now()
+        }])
+    }
+
+    const handleStart = () => {
         setStarted(true)
-        runFlow('start')
-    }, [runFlow])
-
-    const handleReply = useCallback((reply: QuickReply) => {
-        setMessages((prev) => [
-            ...prev,
-            { id: Date.now(), from: 'user' as const, text: reply.label, time: now() },
-        ])
-        runFlow(reply.value)
-    }, [runFlow])
+        setMessages([{
+            id: Date.now(),
+            from: 'bot',
+            text: '¡Hola! soy el asistente de **DentalWeb**. Te ayudo a llevar tu clínica al siguiente nivel con una página web de élite. ¿Qué plan te interesa conocer hoy?',
+            time: now()
+        }])
+    }
 
     return (
         <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col" style={{ height: 560 }}>
@@ -267,12 +390,24 @@ function ChatDemo() {
                     <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-white" />
                 </div>
                 <div>
-                    <p className="text-white font-bold text-sm leading-tight">DentalBot ✨</p>
-                    <p className="text-teal-100 text-xs">Asistente Virtual · En línea</p>
+                    <p className="text-white font-bold text-sm leading-tight">DentalBot AI ✨</p>
+                    <p className="text-teal-100 text-xs">Inteligencia Artificial · En línea</p>
                 </div>
-                <div className="ml-auto flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-teal-100 text-xs font-medium">24/7</span>
+                <div className="ml-auto flex flex-col items-end gap-1">
+                    <button
+                        onClick={() => handleHumanAction(true)}
+                        className="text-[10px] bg-white/20 hover:bg-white/30 text-white px-2 py-1 rounded-md font-bold transition-colors"
+                    >
+                        HABLAR CON HUMANO 👤
+                    </button>
+                    {started && !showSurvey && (
+                        <button
+                            onClick={handleFinalize}
+                            className="text-[10px] bg-white/10 hover:bg-white/20 text-white/80 px-2 py-1 rounded-md font-bold transition-colors mt-0.5"
+                        >
+                            FINALIZAR CHAT 🏁
+                        </button>
+                    )}
                 </div>
             </div>
 
@@ -288,8 +423,8 @@ function ChatDemo() {
                             <Bot className="w-8 h-8 text-teal-500" />
                         </div>
                         <div>
-                            <p className="text-slate-700 font-bold text-base">Chatbot Demo en Vivo</p>
-                            <p className="text-slate-500 text-sm mt-1">Simula cómo interactuarían tus pacientes</p>
+                            <p className="text-slate-700 font-bold text-base">Chatbot Inteligente IA</p>
+                            <p className="text-slate-500 text-sm mt-1">Alimentado con Grok y datos reales</p>
                         </div>
                         <button
                             onClick={handleStart}
@@ -330,66 +465,131 @@ function ChatDemo() {
                     ))}
                 </AnimatePresence>
 
-                {/* Typing indicator */}
-                <AnimatePresence>
-                    {typing && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 6 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0 }}
-                            className="flex items-center gap-2"
-                        >
-                            <div className="w-7 h-7 rounded-full bg-teal-100 flex items-center justify-center shrink-0">
-                                <Bot className="w-4 h-4 text-teal-600" />
-                            </div>
-                            <div className="bg-white shadow-sm border border-slate-100 rounded-2xl rounded-tl-sm px-4 py-3 flex gap-1 items-center">
-                                {[0, 1, 2].map((i) => (
-                                    <motion.span
-                                        key={i}
-                                        className="w-1.5 h-1.5 rounded-full bg-teal-300 block"
-                                        animate={{ y: [0, -4, 0] }}
-                                        transition={{ repeat: Infinity, duration: 0.8, delay: i * 0.2 }}
-                                    />
-                                ))}
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-
-                <div ref={bottomRef} />
-            </div>
-
-            {/* Quick replies */}
-            <AnimatePresence>
-                {currentReplies.length > 0 && (
+                {showHumanPrompt && !typing && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="border-t border-slate-100 bg-white px-3 py-3 flex flex-wrap gap-2 shrink-0"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="p-3 bg-teal-50 border border-teal-100 rounded-2xl gap-3 flex flex-col items-center"
                     >
-                        {currentReplies.map((r) => (
+                        <p className="text-xs font-bold text-teal-800">¿Deseas hablar con un asesor humano?</p>
+                        <div className="flex gap-2 w-full">
                             <button
-                                key={r.value}
-                                onClick={() => handleReply(r)}
-                                className="text-xs font-semibold px-3 py-1.5 rounded-xl border border-teal-200 text-teal-700 bg-teal-50 hover:bg-teal-500 hover:text-white hover:border-teal-500 transition-all"
+                                onClick={() => handleHumanAction(true)}
+                                className="flex-1 py-2 bg-teal-600 text-white rounded-xl text-xs font-black hover:bg-teal-700 transition-colors"
                             >
-                                {r.label}
+                                SÍ, POR FAVOR
                             </button>
-                        ))}
+                            <button
+                                onClick={() => handleHumanAction(false)}
+                                className="flex-1 py-2 bg-slate-200 text-slate-700 rounded-xl text-xs font-bold hover:bg-slate-300 transition-colors"
+                            >
+                                NO, SEGUIR AQUÍ
+                            </button>
+                        </div>
                     </motion.div>
                 )}
-            </AnimatePresence>
 
-            {/* Input bar (decorative) */}
-            <div className="px-4 py-3 border-t border-slate-100 bg-white flex items-center gap-2 shrink-0">
-                <div className="flex-1 bg-slate-50 rounded-xl px-4 py-2 text-slate-400 text-sm">
-                    Escribe un mensaje…
+                {showSurvey && !typing && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="p-3 bg-blue-50 border border-blue-100 rounded-2xl gap-3 flex flex-col items-center"
+                    >
+                        <p className="text-xs font-bold text-blue-800">¿Cómo calificarías mi atención?</p>
+                        <div className="flex gap-2">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <button
+                                    key={star}
+                                    onClick={() => handleSurveySubmit(star)}
+                                    className="p-1 hover:scale-125 transition-transform"
+                                >
+                                    <span className="text-2xl">
+                                        {star <= surveyRating ? '⭐' : '☆'}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+                        <p className="text-[10px] text-blue-600 font-medium italic">Tu opinión nos ayuda a mejorar ✨</p>
+                    </motion.div>
+                )}
+
+                {typing && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex items-center gap-2"
+                    >
+                        <div className="w-7 h-7 rounded-full bg-teal-100 flex items-center justify-center shrink-0">
+                            <Bot className="w-4 h-4 text-teal-600" />
+                        </div>
+                        <div className="bg-white shadow-sm border border-slate-100 rounded-2xl rounded-tl-sm px-4 py-3 flex gap-1 items-center">
+                            {[0, 1, 2].map((i) => (
+                                <motion.span
+                                    key={i}
+                                    className="w-1.5 h-1.5 rounded-full bg-teal-300 block"
+                                    animate={{ y: [0, -4, 0] }}
+                                    transition={{ repeat: Infinity, duration: 0.8, delay: i * 0.2 }}
+                                />
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </div>
+
+            {/* Input bar */}
+            {/* File Previews */}
+            {uploadedFiles.length > 0 && (
+                <div className="px-4 py-2 flex flex-wrap gap-2 border-t border-slate-100 bg-white">
+                    {uploadedFiles.map((file, idx) => (
+                        <div key={idx} className="flex items-center gap-2 bg-slate-100 px-2 py-1 rounded-lg text-[10px] font-medium text-slate-600 border border-slate-200">
+                            {file.type.startsWith('image/') ? '🖼️' : '📄'}
+                            <span className="truncate max-w-[80px]">{file.name}</span>
+                            <button type="button" onClick={() => removeFile(idx)} className="text-slate-400 hover:text-red-500">
+                                <X className="w-3 h-3" />
+                            </button>
+                        </div>
+                    ))}
                 </div>
-                <button className="w-9 h-9 rounded-xl bg-teal-500 flex items-center justify-center shrink-0 opacity-40">
+            )}
+
+            <form
+                onSubmit={(e) => { e.preventDefault(); sendMessage(inputValue) }}
+                className="px-4 py-3 border-t border-slate-100 bg-white flex items-center gap-2 shrink-0"
+            >
+                <input
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    accept="image/*,application/pdf"
+                    multiple
+                    className="hidden"
+                />
+                <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={!started || typing}
+                    className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0 hover:bg-slate-200 transition-colors disabled:opacity-40"
+                    title="Adjuntar imagen o PDF"
+                >
+                    <Paperclip className="w-4 h-4 text-slate-500" />
+                </button>
+
+                <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    placeholder="Pregunta lo que sea..."
+                    disabled={!started || typing}
+                    className="flex-1 bg-slate-50 rounded-xl px-4 py-2 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+                />
+                <button
+                    type="submit"
+                    disabled={!started || typing || (!inputValue.trim() && uploadedFiles.length === 0)}
+                    className="w-9 h-9 rounded-xl bg-teal-500 flex items-center justify-center shrink-0 disabled:opacity-40 hover:bg-teal-600 transition-colors"
+                >
                     <Send className="w-4 h-4 text-white" />
                 </button>
-            </div>
+            </form>
         </div>
     )
 }

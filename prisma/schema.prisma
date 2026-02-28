@@ -21,6 +21,13 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+model ChatConversation {
+  id        String   @id @default(cuid())
+  history   String   // JSON string of messages
+  emailSent Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
 model Post {
   id        String   @id @default(cuid())
   title     String
