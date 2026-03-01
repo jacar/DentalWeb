@@ -22,15 +22,13 @@ export function SalesFooter() {
       { label: 'Mantenimiento Web', href: '#servicios' }
     ],
     recursos: [
-      { label: 'Blog', href: '#' },
-      { label: 'Guías Gratuitas', href: '#' },
-      { label: 'Plantillas', href: '#' },
-      { label: 'Casos de Éxito', href: '#testimonios' }
+      { label: 'Plantillas', href: '#plantillas' },
+      { label: 'Casos de Éxito', href: 'https://www.consultorioodontologicola78.com/', target: '_blank' }
     ],
     legal: [
-      { label: 'Términos', href: '#' },
-      { label: 'Privacidad', href: '#' },
-      { label: 'Cookies', href: '#' }
+      { label: 'Términos', href: '/terminos' },
+      { label: 'Privacidad', href: '/privacidad' },
+      { label: 'Cookies', href: '/cookies' }
     ]
   }
 
@@ -70,14 +68,17 @@ export function SalesFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="h-10 lg:h-12 w-auto overflow-hidden">
+            <Link href="/" className="flex flex-col mb-5 group">
+              <div className="relative h-8 lg:h-10 w-auto">
                 <img
                   src="/images/logodental.png"
                   alt="Logo DentalWeb"
                   className="h-full w-auto object-contain brightness-0 invert"
                 />
               </div>
+              <span className="text-[6px] lg:text-[8px] font-black uppercase tracking-[0.2em] text-teal-400 mt-0.5">
+                Web Premium para Odontólogos
+              </span>
             </Link>
             <p className="text-slate-400 mb-6 leading-relaxed max-w-sm">
               Especialistas en desarrollo web para clínicas dentales. Más de 200 odontólogos en Colombia confían en nosotros.
@@ -104,7 +105,12 @@ export function SalesFooter() {
             <ul className="space-y-3">
               {footerLinks.recursos.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    target={(link as { label: string; href: string; target?: string }).target || '_self'}
+                    rel={(link as { label: string; href: string; target?: string }).target === '_blank' ? 'noopener noreferrer' : undefined}
+                    className="text-slate-400 hover:text-teal-400 transition-colors text-sm"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -148,9 +154,9 @@ export function SalesFooter() {
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-500">
               {footerLinks.legal.map((link, index) => (
-                <a key={index} href={link.href} className="hover:text-teal-400 transition-colors">
+                <Link key={index} href={link.href} className="hover:text-teal-400 transition-colors">
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
             <p className="text-slate-500 text-sm flex items-center gap-1.5">
